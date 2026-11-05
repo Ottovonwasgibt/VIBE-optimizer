@@ -184,3 +184,15 @@ The architecture is now linked into a **synthetic, advisory-only end-to-end cycl
 
 The project-skills `/cognitive:capability-check` and `/cognitive:checkpoint-review` are available for manual Vibe discovery after trusting/reloading this repo's existing plugin. They do not install servers or change tool permissions. Actual model evaluation remains an open milestone.
 
+
+## Model-portable capability packs and first opt-in A/B launcher
+
+The workbench is intentionally model-agnostic: it should serve Mistral Vibe, Claude and GPT-6 Astra (or other tool-capable models) through **host-specific adapters**. The same external reference, validated recipe or checkpoint may help different models, but task success, cost and latency must be measured independently; the system does **not** change base model weights.
+
+- [Cross-model architecture and Astra/Claude portability](docs/MODEL-PORTABILITY.md)
+- [Dry-run-first local Vibe/Claude A/B runner](experiments/live_agent/run_local.py) and [instructions](experiments/live_agent/README.md)
+- [Public/synthetic cross-domain task suite](experiments/live_agent/public_synthetic_suite.json)
+- [CI: dry run only, no model or API calls](https://github.com/Ottovonwasgibt/VIBE-optimizer/actions/runs/42059658685)
+- [Issue #12: actual pinned Vibe A/B task evaluation](https://github.com/Ottovonwasgibt/VIBE-optimizer/issues/12)
+
+**No actual model was run by this research launcher yet.** All generated benchmark prompts and model traces default to ignored `runtime/`. Use `--execute` only after checking the installed agent CLI, provider fees, permissions and exact model. Astra integration is documented, not implemented in this CLI runner.
