@@ -67,3 +67,11 @@ See technical designs and evaluation contract.
 ## Open decisions
 
 See `docs/ARCHITECTURE.md` and `docs/ROADMAP.md`; file architecture decisions in `docs/decisions/` once experiments establish evidence.
+
+## Research-first addendum — theory, not just infrastructure
+
+The overarching goal is to build and test a **working causal theory** of how external knowledge, procedure, tools, episodic experience, validation and task-aware routing interact to change a fixed model's effective capability. Read [TECA](THEORY-OF-EXTERNAL-COGNITION.md), the [hypothesis registry](../research/HYPOTHESIS-REGISTRY.md), the [frontier dossier](../research/FRONTIER-EVIDENCE-DOSSIER.md) and the [multi-model laboratory protocol](MULTI-MODEL-RESEARCH-LAB.md) before prioritizing an architectural component.
+
+Our primary deliverables are **explanatory models, falsifiable hypotheses, alternative mechanism designs, technical specifications, and discriminating experiments**. Production-grade implementation is a later consequence of surviving experiments. The small SQLite/CLI implementation is only an initial instrumentation scaffold.
+
+The project's original five-layer architecture remains a proposal, not a conclusion. New components should emerge from the research cycle `evidence → theory → rival explanation → hypothesis → small test → revision`, not from architectural fashion or model consensus. Multi-model research can expand the candidate search space, but independent measurement and budget-matched controls are required before claims of improvement.
