@@ -1,0 +1,24 @@
+{
+  "source_id": "synthetic-process-manual",
+  "title": "Fictional institutional workflow (not real Osiris documentation)",
+  "source_ref": "synthetic://training-only",
+  "classification": "RESTRICTED",
+  "tenant": "fictional-university",
+  "owner": "fictional-owner",
+  "version": "fixture-v1",
+  "status": "staged",
+  "effective_from": null,
+  "effective_to": null,
+  "sha256": null,
+  "purpose_allowlist": [
+    "incident_analysis"
+  ],
+  "role_allowlist": [
+    "functional_manager"
+  ],
+  "destination_allowlist": [],
+  "rights": {
+    "index": "pending",
+    "model_excerpt": "denied"
+  }
+}
