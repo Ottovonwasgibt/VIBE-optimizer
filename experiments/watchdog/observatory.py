@@ -56,7 +56,7 @@ class TraceEvent:
 def load_trace(payload: dict) -> tuple[str, tuple[TraceEvent, ...]]:
     _expect_exact_keys(payload, frozenset({"schema_version", "trace_id", "events"}),
                        "trace")
-    if payload["schema_version"] != 1:
+    if type(payload["schema_version"]) is not int or payload["schema_version"] != 1:
         raise ValueError("Unsupported trace version")
     trace_id = payload["trace_id"]
     if not isinstance(trace_id, str) or not re.fullmatch(
@@ -72,10 +72,12 @@ def load_trace(payload: dict) -> tuple[str, tuple[TraceEvent, ...]]:
         e = TraceEvent(**entry)
         if type(e.step) is not int or e.step != i:
             raise ValueError("Nonconsecutive event steps")
-        if type(e.elapsed_seconds) is not int or e.elapsed_seconds < last_time:
+        if type(e.elapsed_seconds) is not int or e.elapsed_seconds < 0 or e.elapsed_seconds < last_time:
             raise ValueError("Non-monotonic event time")
         last_time = e.elapsed_seconds
-        if (e.tool_class not in TOOL_CLASSES or
+        if (type(e.tool_class) is not str or type(e.tool_result) is not str or
+            type(e.progress) is not str or type(e.tool_fit) is not str or
+            e.tool_class not in TOOL_CLASSES or
             e.tool_result not in TOOL_RESULTS or
             e.progress not in PROGRESS_RESULTS or
             e.tool_fit not in TOOL_FIT_RESULTS):
