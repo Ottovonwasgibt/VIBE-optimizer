@@ -1,0 +1,27 @@
+name: Watchdog policy replay
+on:
+  push:
+    paths:
+      - 'experiments/watchdog/**'
+      - 'src/vibe_optimizer/checkpoint_watchdog.py'
+      - 'src/vibe_optimizer/watchdog_gate.py'
+      - 'tests/test_watchdog_replay.py'
+      - '.github/workflows/watchdog-replay.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay policies against synthetic sessions
+        run: python experiments/watchdog/replay.py --output experiments/watchdog/replay-results.json
+      - name: Test the replay harness
+        run: python -m unittest discover -s tests -p test_watchdog_replay.py -v
+      - uses: actions/upload-artifact@v4
+        with:
+          name: watchdog-synthetic-replay
+          path: experiments/watchdog/replay-results.json
+          retention-days: 30
