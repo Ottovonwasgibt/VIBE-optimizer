@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cognitive-stack",
+  "version": "0.1.0",
+  "description": "Research-stage procedural skills and reference policies for Vibe Code; MCP not enabled yet.",
+  "extensions": {
+    "ai.mistral.vibe": {
+      "schemaVersion": 1,
+      "displayName": "Cognitive Stack",
+      "toolNamespace": "cognitive"
+    }
+  }
+}
