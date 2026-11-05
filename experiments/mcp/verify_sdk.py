@@ -29,6 +29,8 @@ async def main() -> None:
         )
         if response.is_error:
             raise AssertionError("MCP tool reported error")
+        print("synthetic structured_content:", repr(response.structured_content))
+        print("synthetic content:", repr(response.content))
         payload=json.dumps(response.structured_content)
         if "api_pydantic_2" not in payload or "api_pydantic_1" in payload:
             raise AssertionError("Version mismatch in MCP result")
