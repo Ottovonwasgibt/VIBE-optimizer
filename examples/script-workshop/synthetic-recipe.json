@@ -1,0 +1,29 @@
+{
+  "status": "SYNTHETIC fixture and draft recipe; no real student data",
+  "recipe": {
+    "recipe_id": "synthetic_line_normalizer",
+    "version": "1",
+    "steps": [
+      "normalize_newlines",
+      "strip_lines",
+      "drop_empty_lines",
+      "deduplicate_lines"
+    ],
+    "kind": "pure_text",
+    "scope": "synthetic_or_explicitly_approved_text"
+  },
+  "fixtures": [
+    {
+      "input": "  First  \r\nFirst \n\n Second ",
+      "expected": "First\nSecond"
+    },
+    {
+      "input": "A\nB\nA\n",
+      "expected": "A\nB"
+    },
+    {
+      "input": " \r\n ",
+      "expected": ""
+    }
+  ]
+}
