@@ -58,3 +58,15 @@ A **project-scoped** Agent Plugins 1.0 plugin at `.vibe/plugins/cognitive-stack/
 - [SQLite FTS5](https://www.sqlite.org/fts5.html)
 
 See the source registry for source-to-component traceability.
+
+## Research-first programme (2026-11-05)
+
+The priority is now **frontier concept development and theory building**—not immediately shipping a big plugin. The local SQLite prototype is a research scaffold, not the main scientific result.
+
+- [Working theory of external cognitive augmentation](docs/THEORY-OF-EXTERNAL-COGNITION.md) — causal constructs, competing explanations and falsifiable predictions.
+- [Hypothesis registry](research/HYPOTHESIS-REGISTRY.md) — ten preregistration-ready candidate mechanisms and ways to disprove them.
+- [Frontier evidence dossier](research/FRONTIER-EVIDENCE-DOSSIER.md) — current 2025–2026 literature, positive and negative evidence, open gaps.
+- [Multi-model research laboratory](docs/MULTI-MODEL-RESEARCH-LAB.md) — using Vibe and independent frontier models for source mapping, proposal creation, critique, controlled prototypes and replication.
+- [Research orchestrator technical blueprint](docs/TECHNICAL-DESIGNS/03-research-orchestrator.md) — project-owned data contracts, model adapters, prompts and evaluator boundaries.
+
+Treat proposed novelty as **unverified** until a primary-literature search and independent experiment establish what is actually new. Do not equate multiple-model agreement with scientific validation.
