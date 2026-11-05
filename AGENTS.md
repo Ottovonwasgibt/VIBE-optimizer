@@ -48,3 +48,7 @@ Then: verification loop, metadata filters, reviewed episodic memory.
 Only if measurable value: embeddings, reranking, relationship graphs, model-based meta-controller.
 
 If blocked, stop at a validated intermediate state and state precisely what remains.
+
+## Research-first amendment (2026-11-05)
+
+**Before implementing a new component:** read `docs/THEORY-OF-EXTERNAL-COGNITION.md`, `research/HYPOTHESIS-REGISTRY.md`, `research/FRONTIER-EVIDENCE-DOSSIER.md` and `docs/MULTI-MODEL-RESEARCH-LAB.md`. Start with a falsifiable hypothesis and a minimal discriminating experiment. Investigate prior art. Do not infer research novelty from a model's wording or consensus. Distinguish model-generated suggestions from independently verified findings. Prefer small technical proposals and research instruments to feature-heavy implementation.
