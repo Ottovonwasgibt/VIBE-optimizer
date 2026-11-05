@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "experiments" / "watchdog"))
 
 from replay import run, scenarios, policies, replay_one  # noqa: E402
 from vibe_optimizer.watchdog_gate import (
-    GateState, gate_alert, acknowledge_handoff
+    GateState, gate_alert, acknowledge_handoff, acknowledge_safety_hold
 )
 from vibe_optimizer.checkpoint_watchdog import CheckpointDecision  # noqa: E402
 
@@ -98,6 +98,25 @@ class WatchdogReplayTests(unittest.TestCase):
     def test_halt_ignores_reminder_cooldown(self):
         _, st = gate_alert(decision("review", "time_interval"), 1, GateState())
         emitted, _ = gate_alert(decision("halt", "unsafe_operation_detected"), 2, st)
+        self.assertTrue(emitted)
+
+    def test_safety_latch_survives_transient_signal_and_handoff_ack(self):
+        state = GateState()
+        emitted, state = gate_alert(
+            decision("halt", "unsafe_operation_detected"), 1, state)
+        self.assertTrue(emitted)
+        self.assertTrue(state.safety_hold)
+        emitted, state = gate_alert(decision("continue"), 2, state)
+        self.assertFalse(emitted)
+        self.assertTrue(state.safety_hold)
+        state = acknowledge_handoff(state, host_reviewed=True)
+        self.assertTrue(state.safety_hold)
+        self.assertTrue(acknowledge_safety_hold(
+            state, authorized_host_release=False).safety_hold)
+        restored = acknowledge_safety_hold(state, authorized_host_release=True)
+        self.assertFalse(restored.safety_hold)
+        emitted, restored = gate_alert(
+            decision("review", "time_interval"), 3, restored)
         self.assertTrue(emitted)
 
     def test_out_of_order_host_counter_rejected(self):
