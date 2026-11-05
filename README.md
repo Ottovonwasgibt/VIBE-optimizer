@@ -106,3 +106,14 @@ A structured external library goes beyond RAG text chunks: it combines **version
 - [Research issue #8: benchmark capability packs against docs, skills and scripts](https://github.com/Ottovonwasgibt/VIBE-optimizer/issues/8)
 
 Grounding: DocPrompting, RepoCoder, Repoformer, CodeRAG-Bench, LibEvoBench, SkillsBench and SWE-Skills-Bench. Published work supports individual interventions but **does not yet prove a combined uplift** for this project. Pack manifests and example stack versions are only drafts until actual source/lockfile verification.
+
+
+## First executed research pilots — 2026-11-05
+
+Two **actual executable infrastructure tests** have now been run and independently reproduced in GitHub Actions. These are **not Vibe/LLM benchmark runs**.
+
+- [Experimental report and observed outcomes](research/EXPERIMENT-REPORT-2026-11-05.md)
+- [Reproducible pilot scripts, instructions and summary](experiments/pilots/README.md)
+- [GitHub Actions reproduction: success](https://github.com/Ottovonwasgibt/VIBE-optimizer/actions/runs/42038453644)
+
+Tool-workbench proxy: 24 synthetic tools, 28 hand-authored tasks; scoped/decomposed selection selected the correct compatible slate on **26/28** cases at top-3 versus **18/28** for plain lexical search. Real Pydantic compatibility smoke test: **v2-only methods 0/7 on v1 compatibility API** versus **7/7 on v2 API**. These observations support pursuing real model A/B experiments; they **do not** establish improved Vibe task-solving performance.
