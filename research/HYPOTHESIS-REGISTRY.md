@@ -178,3 +178,22 @@ Every experiment must predeclare:
 | H-08 | cost-aware action policy | logged action-value heuristic |
 | H-09 | bottleneck triage | task-deficit classifier + labeled cases |
 | H-10 | contraindication memory | negative lesson schema with applicability |
+
+
+## H-17 — A checkpoint watchdog reduces long-session agent drift
+
+**Claim (untested on a model):** Under equal total inference/tool/time budget, periodic reorientation combined with externally detected mistakes and verified restarts improves independently validated task outcomes compared with an unmodified uninterrupted agent.
+
+**Mechanism:** A model can lose priority constraints or persist with a poor tool choice during long trajectories. A trusted host can recover the task contract and objective evidence, remind it to reconsider tool suitability, and when needed provide a source-linked restart packet. This is not biological rest or guaranteed cognitive recovery.
+
+**Comparison:** (A) no watchdog; (B) fixed interval; (C) event-triggered; (D) hybrid with reminder gate; (E) hybrid plus independently reviewed fresh-context handoff. Task types include long coding and non-coding diagnosis plus short negative controls. Record actual delivered/acknowledged prompts, not only a logged trigger.
+
+**Metrics:** held-out verified resolution, missed constraints, inappropriate tool selection, repeated tool failures, corrected-error rate after checkpoint, alert precision, interruptions on productive tasks, token/time cost and unauthorized actions. Stratify by task length and tool count.
+
+**Refute or narrow if:** improvements vanish when controlling extra inference budget; alerts cause disruptive over-checking; false checks interrupt good work; source-backed handoff loses essential constraints; model ignores the hook; or a static initial instruction works as well.
+
+**Evidence and actual status (2026-11-05):** **policy mechanics tested; model-level causal hypothesis NOT tested**. Two synthetic replay phases found (i) the need for reminder-rate limiting and (ii) a tradeoff between broad interval detection and unnecessary notifications on healthy sessions. Seeded variations share the same hand-authored ten families and do not establish population validity. A metadata-only offline trace contract and a safety-hold latch have passed automated tests. See [report](CHECKPOINT-WATCHDOG-SENSITIVITY-2026-11-05.md) and [TDD-10](../docs/TECHNICAL-DESIGNS/08-checkpoint-watchdog.md).
+
+**Prior art:** https://github.com/oraios/serena ; https://github.com/snarktank/ralph ; https://www.anthropic.com/research/effective-harnesses-for-long-running-agents ; https://www.microsoft.com/en-us/research/publication/benchmarking-long-horizon-agent-context-compaction-with-compactionbench/
+
+**Research warning:** Creating warnings and detecting synthetic conditions does not demonstrate that a model notices, acknowledges, obeys, or benefits from them. Do not label H-17 as empirically confirmed.
