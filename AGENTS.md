@@ -1,5 +1,7 @@
 # Working instructions for coding agents
 
+**Project mission:** maximize the verified, effective capability of **one coding model (initially Vibe)** using external cognitive resources. Do not default to multi-agent swarms. Read `docs/CAPABILITY-MAXIMIZATION.md` before selecting components; justify any other model/subagent using budget-matched evaluation.
+
 Read this entire file before editing. This repository contains an **unimplemented research blueprint** as well as future executable components; distinguish them in every response.
 
 ## Operating sequence
