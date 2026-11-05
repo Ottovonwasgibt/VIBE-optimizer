@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "suite_id": "public_synthetic_pilot_v1",
+  "tasks": [
+    {
+      "task_id": "python_api_version",
+      "category": "versioned_api",
+      "prompt": "A Pydantic v2 application needs to validate a Python dict into an Invoice model and then serialize the model into a plain Python dict. Give the appropriate model method names and a minimal example. State which older method names should not be preferred for new v2 code.",
+      "reference_text": "Pydantic v2 API reference excerpt for this TEST: model_validate accepts objects and parses them as model instances. model_dump serializes a model into a dictionary. In v2, parse_obj and dict are retained as deprecated compatibility methods. Use version-specific contracts rather than assuming v1 method names are preferred."
+    },
+    {
+      "task_id": "invented_status_semantics",
+      "category": "functional_management",
+      "prompt": "In a completely fictional university workflow, an imported message has status A27 and has received a transport acknowledgement. A user asks whether the message failed in transport or awaits a local administrative decision. Explain what can and cannot be concluded from this observation and recommend a safe next check. Do not assume any real Osiris or Studielink codes.",
+      "reference_text": "FICTIONAL TRAINING PACK, NOT A VENDOR MANUAL. Version 1.0 status matrix: A27 = ReceivedBySIS_AwaitingLocalApproval. A27 is assigned only after successful transport acknowledgement. This state requires local workflow review; it does not signify a transmission error. Never resubmit a message based solely on status A27."
+    },
+    {
+      "task_id": "no_extra_tool",
+      "category": "negative_control",
+      "prompt": "In two sentences, distinguish authentication from authorization for a general software application. Do not assume any institution-specific configuration.",
+      "reference_text": ""
+    },
+    {
+      "task_id": "synthetic_stack_contract",
+      "category": "integration_stack",
+      "prompt": "An imaginary framework named Alder 3 integrates with fictional Qbus 2. The user asks which initialization flag Qbus 2 requires before consuming events and whether the old Qbus 1 flag is still valid. Identify what can be established, and do not invent undocumented API options.",
+      "reference_text": "FICTIONAL VERSION-CONSTRAINED STACK MANUAL: Alder 3 + Qbus 2 initialization requires option enable_idempotent_receive=true. The old Qbus 1 option use_dedup_cache=true is rejected in Qbus 2 with E_UNKNOWN_OPTION. This is a made-up benchmark-only stack, not a real software package."
+    }
+  ]
+}
