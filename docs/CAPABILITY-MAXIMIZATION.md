@@ -5,11 +5,11 @@
 
 ## Mission: unlock maximum *effective* capacity
 
-The project's ultimate goal is to push **one chosen coding model, initially Mistral Vibe**, as close as practical to its **system-level capability frontier** through external cognitive infrastructure. The goal is *not* to assemble as many agents as possible. Additional models or subagents are **optional tools**, evaluated only against equivalent single-model alternatives.
+The project's ultimate goal is to push **one chosen task-solving model, initially Mistral Vibe**, as close as practical to its **system-level capability frontier** through external cognitive infrastructure. The goal is *not* to assemble as many agents as possible. Additional models or subagents are **optional tools**, evaluated only against equivalent single-model alternatives.
 
 The ambition can be colloquially called *Super Saiyan mode*. Engineering term: **Capability Maximization Engine (CME)**.
 
-A useful unit of progress is a task the unaugmented model cannot reliably complete, but an augmented configuration **can complete and independently verify** under a clearly stated budget, without unacceptable safety regression.
+A useful unit of progress is a task—whether coding, investigation, functional management or knowledge work—that the unaugmented model cannot reliably complete, but an augmented configuration **can complete and independently verify** under a clearly stated budget, without unacceptable safety regression.
 
 ## What is maximized?
 
@@ -163,3 +163,9 @@ The [Multi-Model Research Lab](MULTI-MODEL-RESEARCH-LAB.md) is a **research meth
 - [Frontier evidence dossier](../research/FRONTIER-EVIDENCE-DOSSIER.md)
 - [Ablation evaluation](EVALUATION.md)
 - [Roadmap](ROADMAP.md)
+
+## Domain-independent capability frontier
+
+The workbench is not a code-only product. In higher-education functional management the objective includes solving previously difficult **Osiris/Studielink process and integration questions** with documented evidence and the correct procedural judgment. Tools may be documentation search, process/state reconstruction, log correlation, report-definition comparison or tested scripts; the best next action may be to seek authorized confirmation rather than write code.
+
+See [Domain-Agnostic Capability Engine](DOMAIN-OPERATIONS-CAPABILITY-ENGINE.md) and the [higher-education example](DOMAIN-DESIGNS/01-higher-education-functional-management.md). Reevaluate the current evaluation metric: independently verified operational correctness, safe escalation, source fidelity and actual time savings are as important as benchmark patch resolution.
