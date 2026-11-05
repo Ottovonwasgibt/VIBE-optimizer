@@ -124,3 +124,14 @@ Project plugin loads only in a trusted working directory.
 - Deterministic rules vs model-driven router: start deterministic to isolate value.
 - Native vs plugin skill location: use plugin for portable bundle, project `AGENTS.md` for contributor workflow.
 - Windows-first packaging: validate local `uv` availability, process lifetime, stdio behavior and approved paths.
+
+## Implemented cross-domain advisory scaffold (2026-11-05)
+
+The top-level diagram above remains the *target architecture*. A subset now exists as independently tested Python research code: [Capability Registry](../src/vibe_optimizer/capability_registry.py) -> [Deficit Router](../src/vibe_optimizer/task_router.py) -> [Evidence Packets](../src/vibe_optimizer/evidence_packets.py) -> [Advisory Loop](../src/vibe_optimizer/capability_loop.py), joined by [Checkpoint Policy](../src/vibe_optimizer/checkpoint_watchdog.py). [Candidate Governance](../src/vibe_optimizer/candidate_governance.py) records independent review metadata; [Recipe Workshop](../src/vibe_optimizer/recipe_compiler.py) executes **only pure allowlisted string transformations**, not arbitrary code.
+
+[Delivery Audit](../src/vibe_optimizer/capability_delivery.py) distinguishes catalog, actual host-visible, invoked and independently relevant tools; future real host integration is needed to populate it. The [public MCP v2 adapter](../src/vibe_optimizer/mcp_bridge.py) exposes only read-only metadata discovery and planning for fictional/public cards. It has been tested via the actual SDK in memory but **not yet through Mistral Vibe**.
+
+The [Synthetic Integration Smoke](../experiments/integration/smoke.py) demonstrates the flow and an independent outcome scorer. It **does not** execute Vibe/model inference, production tools, privileged writes or a real institutional connector. Private source access is a separate [trust boundary](PRIVATE-KNOWLEDGE-BOUNDARY.md).
+
+The full current status and release gates are in [Integrated Capability Cycle](INTEGRATED-CAPABILITY-CYCLE.md).
+
