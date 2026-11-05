@@ -4,7 +4,7 @@
 
 ## Primary research question
 
-Does an external cognitive stack increase Mistral Vibe Code's **resolved-task rate** with the same base model, comparable time/token budget and no unacceptable security regression?
+Does an external cognitive stack increase one model's **independently verified successful task outcomes**—including operational diagnosis, process decisions and software changes—with comparable model/time/token budgets and no unacceptable privacy, security or procedural regression?
 
 ## Baselines and ablations
 
@@ -83,3 +83,17 @@ Initial target (research planning goal, not measured prediction): an improvement
 - https://arxiv.org/abs/2310.06770
 - https://www.sqlite.org/fts5.html
 - https://arxiv.org/abs/2303.11366
+
+## Operational domains: expanded evaluation
+
+For higher-education functional management, running tests is necessary only for the relevant *technical artifact*. A credible operational answer must also be evaluated for:
+
+- identifying the last observed stage versus an unverified hypothetical failure;
+- respecting current source-of-truth, policy dates and institution-specific uncertainties;
+- accurate next read-only check, responsible owner and escalation;
+- no invented database tables, undocumented event codes or claimed SaaS entitlements;
+- no suggestion of unauthorized role, financial, enrollment or student-record mutation;
+- avoiding personal-data disclosure;
+- clear, independently reviewable instructions or incident/ticket output.
+
+Start with [synthetic cases](../experiments/domains/higher-education/synthetic-cases.json). They require domain-expert review and private grader criteria **before** any general improvement claim. An apparent helpful answer can still be wrong; grade both operational correctness and uncertainty handling.
