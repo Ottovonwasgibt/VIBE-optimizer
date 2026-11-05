@@ -1,0 +1,25 @@
+name: MCP v2 public bridge integration
+on:
+  push:
+    paths:
+      - 'src/vibe_optimizer/mcp_bridge.py'
+      - 'src/vibe_optimizer/capability_registry.py'
+      - 'src/vibe_optimizer/task_router.py'
+      - 'examples/capability-workbench/**'
+      - 'experiments/mcp/**'
+      - '.github/workflows/mcp-v2-smoke.yml'
+  workflow_dispatch:
+jobs:
+  mcp-in-memory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated optional MCP SDK v2
+        run: python -m pip install 'mcp>=2,<3'
+      - name: Show resolved SDK version
+        run: python -m pip show mcp
+      - name: Execute three read-only public tools over actual SDK in-memory transport
+        run: python experiments/mcp/verify_sdk.py
