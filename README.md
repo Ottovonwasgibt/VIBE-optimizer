@@ -77,3 +77,23 @@ Treat proposed novelty as **unverified** until a primary-literature search and i
 
 - [Research council runbook](research/RESEARCH-COUNCIL-RUNBOOK.md) — ready-to-use prompts and read-only Vibe agent example.
 - [Deficit-aware router and evidence compiler](docs/TECHNICAL-DESIGNS/04-deficit-router-evidence-compiler.md) — detailed candidate mechanism, contracts and falsifiers.
+
+
+## Quantitative research and reproducible thought experiments
+
+The workbench now has a mathematical research programme, with **synthetic examples rather than measured Vibe improvements**:
+
+- [Quantitative Capability Models](research/QUANTITATIVE-CAPABILITY-MODELS.md): conditional tool-use failure funnel, multi-tool completeness, expected value of discovery/probing, tool-making break-even, context savings, budget-sensitive task frontier, Bayesian tool adequacy.
+- [Capability calculator](experiments/capability_calculator.py): dependency-free CLI for varying the hypothetical parameters.
+- [Calculator unit tests](tests/test_capability_calculator.py): deterministic numerical checks; the script was tested locally before uploading.
+- [Research pilot / Issue #7](https://github.com/Ottovonwasgibt/VIBE-optimizer/issues/7): replace assumed probabilities with measured task outcomes.
+
+Example:
+
+~~~powershell
+python experiments/capability_calculator.py funnel --baseline .70 .65 .85 .80 .90 --enhanced .90 .85 .85 .80 .90
+python experiments/capability_calculator.py probe --p-gap .35 --lift .25 --value 120 --probe-cost 4 --risk-cost 3
+python -m unittest discover -s tests -v
+~~~
+
+The formulas and thresholds describe **assumptions and research questions**, not certified scientific findings or numerical guarantees of improved coding-agent intelligence.
