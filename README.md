@@ -1,10 +1,14 @@
 # VIBE-optimizer
 
-**External Cognitive Augmentation for Mistral Vibe Code**
+**Capability Maximization Engine for Mistral Vibe Code — external cognitive augmentation**
 
-An experimental, versioned engineering project to improve the *effective* software-engineering capabilities of a coding agent by combining external technical knowledge, task-specific skills, repository-aware retrieval, verification tools, and carefully curated episodic memory.
+A research-first project to unlock the maximum **effective capability of a single coding agent**, initially Mistral Vibe, using knowledge, skills, specialized computation, verified memory, adaptive inference and controlled verification. Multiple models are optional research tools, **not** the design goal.
 
 > **Status:** research-backed design and bootstrap, **not** a working autonomous coding agent. The two external Deep Research reports discussed in the originating conversation have **not yet been imported or independently audited**. Do not mistake design sketches for implemented integrations.
+
+## Primary mission: single-agent-first capability maximization
+
+Start with [Capability Maximization Programme](docs/CAPABILITY-MAXIMIZATION.md). The informal 'Super Saiyan' ambition means *reliably solve harder previously unsolved tasks under measured budgets*, not a marketing performance label. Prioritize what one model plus well-designed infrastructure can accomplish; a second model or subagent must independently justify its extra cost.
 
 ## Why this repository exists
 
@@ -66,7 +70,7 @@ The priority is now **frontier concept development and theory building**—not i
 - [Working theory of external cognitive augmentation](docs/THEORY-OF-EXTERNAL-COGNITION.md) — causal constructs, competing explanations and falsifiable predictions.
 - [Hypothesis registry](research/HYPOTHESIS-REGISTRY.md) — ten preregistration-ready candidate mechanisms and ways to disprove them.
 - [Frontier evidence dossier](research/FRONTIER-EVIDENCE-DOSSIER.md) — current 2025–2026 literature, positive and negative evidence, open gaps.
-- [Multi-model research laboratory](docs/MULTI-MODEL-RESEARCH-LAB.md) — using Vibe and independent frontier models for source mapping, proposal creation, critique, controlled prototypes and replication.
+- [Optional multi-model research laboratory](docs/MULTI-MODEL-RESEARCH-LAB.md) — one possible validation/discovery method, not the primary architecture.
 - [Research orchestrator technical blueprint](docs/TECHNICAL-DESIGNS/03-research-orchestrator.md) — project-owned data contracts, model adapters, prompts and evaluator boundaries.
 
 Treat proposed novelty as **unverified** until a primary-literature search and independent experiment establish what is actually new. Do not equate multiple-model agreement with scientific validation.
