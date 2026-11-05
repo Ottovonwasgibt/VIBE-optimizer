@@ -160,3 +160,13 @@ Run \`python examples/private-knowledge/demo.py\` and \`python -m unittest disco
 - [One-shot policy demo](examples/checkpoint-watchdog/check.py) and [tests](tests/test_checkpoint_watchdog.py).
 
 The Vibe hook can only nudge the agent at **the next tool event**, not while the model is idle; it cannot independently verify that the agent followed the reminder or forcibly create a fresh session. It must be evaluated against a Vibe task-success baseline before declaring a benefit. Current thresholds are research defaults, **not scientifically optimized**. Relevant public Vibe hook contract: https://docs.mistral.ai/vibe/code/cli/hooks
+
+
+## Checkpoint watchdog: executed sensitivity study and trace instrumentation
+
+- [Research report — Watchdog Sensitivity](research/CHECKPOINT-WATCHDOG-SENSITIVITY-2026-11-05.md): 400 perturbed **synthetic** sessions in two splits; compares event-only, frequent, balanced, relaxed and stricter policies. Not a model evaluation.
+- [Sensitivity experiment](experiments/watchdog/sensitivity.py) and [replay](experiments/watchdog/replay.py): deterministic synthetic traces and reminder-rate tradeoffs.
+- [Privacy-minimized observatory adapter](experiments/watchdog/observatory.py) and [fictional trace](experiments/watchdog/synthetic_trace.json): accepts only allowlisted host-event metrics for later live-session A/B evaluations.
+- [Watchdog safety gate](src/vibe_optimizer/watchdog_gate.py): remembers a safety hold until an **externally authorized** release; enforcement in the real agent host is still pending.
+
+**Important:** Detection of a simulated anomaly is not a demonstrated improvement in task success. The live Vibe hook is opt-in and has not been proven to change outcomes.
