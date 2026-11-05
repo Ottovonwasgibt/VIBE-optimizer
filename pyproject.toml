@@ -1,0 +1,10 @@
+[project]
+name = "vibe-optimizer"
+version = "0.1.0"
+description = "Experimental external cognitive augmentation for Mistral Vibe Code"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.vibe-optimizer]
+status = "research-bootstrap"
+mcp-server-enabled = false
