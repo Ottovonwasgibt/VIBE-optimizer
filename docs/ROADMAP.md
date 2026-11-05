@@ -112,3 +112,50 @@ The main goal is the [Capability Maximization Programme](CAPABILITY-MAXIMIZATION
 - [ ] Measure wrong diagnosis, unsafe intervention recommendations, missing-evidence handling, operator-time benefit and task completion—not code generation alone.
 
 Core architecture should remain **domain-agnostic**; higher education is a proving ground, not a special-case fork.
+
+## Integrated capability delivery gates — 2026-11-05
+
+The [Integrated Capability Cycle](INTEGRATED-CAPABILITY-CYCLE.md) is the authoritative cross-domain implementation/status overview.
+
+**G0: demonstrable synthetic capability loop — DONE at scaffold level**
+- [x] Qualified/read-only public capability registry with exact-version filtering and negative controls.
+- [x] Transparent deficit router and budgeted provenance packet builder.
+- [x] Candidate script/skill/lesson qualification and revocation metadata (admin process simulated).
+- [x] Inventory/visible/invoked/relevant audit.
+- [x] Checkpoint watchdog, safety hold and synthetic trace replay.
+- [x] Safe pure-function recipe workshop with independent synthetic expected-output fixtures.
+- [x] Synthetic full-cycle CI and strict paired-outcome evaluator.
+- [x] Optional MCP Python SDK v2 three-tool public bridge verified by in-memory client.
+
+**G1: true Vibe host discovery/permission evidence — NOT DONE**
+- [ ] Pin installed `vibe --version`, actual agent/model version and CLI/plugin releases.
+- [ ] Launch the public stdio MCP adapter from Vibe; record /mcp status and real visible tools.
+- [ ] Validate tool delivery, target versions and native skill triggers with event evidence.
+- [ ] Confirm that script/tool permissions stay host-owned and no restricted data is involved.
+
+**G2: independently verified one-model tasks — NOT DONE**
+- [ ] Freeze new coding, documentation and operational-process tasks plus private answer keys.
+- [ ] Compare bare model vs extra reasoning vs targeted docs vs versioned packs vs skills/tools.
+- [ ] Compare no-checkpoint vs event-only vs hybrid on long tasks, include healthy controls.
+- [ ] Grade externally verified safe task success, cost and negative transfer, not model confidence.
+
+**G3: reusable tool/skill compiler — PARTIAL**
+- [x] Declarative pure recipe with input bounds and fixture checks.
+- [x] Candidate proposal/review/revoke lifecycle metadata and scope match.
+- [ ] General adapters/scripts only in sandbox with independent test fixtures and permission review.
+- [ ] Evidence-based reuse economics and maintenance/version regression measurement.
+
+**G4: knowledge, processes and experience — PARTIAL**
+- [x] Offline public SQLite source staging and revisioned retrieval.
+- [x] Synthetic functional-management domain cases and private-source method/scaffold.
+- [ ] Version-pinned source ingestion adapters, cross-document conflict check and current license review.
+- [ ] Actual persistent verified memory, expiry/revocation, negative case indexing and reranking tests.
+- [ ] Private data adapter ONLY in separately approved deployment.
+
+**G5: deployment/effectiveness — NOT DONE**
+- [ ] Independently replicate performance gains under matched budgets.
+- [ ] Review safety, supply chain, failure modes, latency, logs and abort behavior.
+- [ ] Publish reproducible task outcome evidence, including null/harmful results.
+
+Do not mark an entire workstream complete because its metadata API passes tests. No real Vibe task-resolution improvement has yet been demonstrated by these synthetic scaffolds.
+
