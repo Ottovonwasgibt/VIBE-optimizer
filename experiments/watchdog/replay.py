@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 from vibe_optimizer.checkpoint_watchdog import (
     CheckpointPolicy, SessionCounters, decide
 )
+from vibe_optimizer.watchdog_gate import GateState, gate_alert
 
 
 @dataclass(frozen=True)
@@ -100,11 +101,13 @@ def policies() -> dict[str, CheckpointPolicy | None]:
             max_failed_attempts=3, max_unverified_actions=18,
             max_fallback_tool_streak=7, handoff_context_fraction=.85),
         "hybrid": CheckpointPolicy(),
+        "hybrid_gated": CheckpointPolicy(),
     }
 
 
 def replay_one(s: Scenario, name: str, policy: CheckpointPolicy | None) -> dict:
     alerts: list[dict] = []
+    gate_state = GateState()
     # Records are deliberately immutable synthetic observations. The replay
     # cannot assume a model responds to reminders or changes course.
     # An in-progress critical action postpones a review until the next safe event.
@@ -112,7 +115,11 @@ def replay_one(s: Scenario, name: str, policy: CheckpointPolicy | None) -> dict:
         if policy is None:
             continue
         decision = decide(metrics, policy)
-        if decision.action == "continue":
+        if name == "hybrid_gated":
+            emit, gate_state = gate_alert(decision, step, gate_state)
+            if not emit:
+                continue
+        elif decision.action == "continue":
             continue
         alerts.append({
             "step": step, "action": decision.action,
