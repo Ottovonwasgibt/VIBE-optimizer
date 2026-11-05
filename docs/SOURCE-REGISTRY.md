@@ -64,3 +64,24 @@ On receiving either Deep Research report:
 3. Mark `SUPPORTED`, `PARTIAL`, `UNVERIFIED`, `CONTRADICTED`.
 4. Convert only supported claims into architecture decisions or implementation issues.
 5. Keep a dated changelog of corrections.
+
+## Additional current 2026 primary research — research-first programme
+
+The following source pages were inspected on 2026-11-05. **Full evaluation code, paper methods and licenses still require an independent audit**. For mechanisms, caveats and research implications see `research/FRONTIER-EVIDENCE-DOSSIER.md`.
+
+| ID | Primary source | Relevance |
+| --- | --- | --- |
+| SKILLGEN-2026 | https://www.microsoft.com/en-us/research/publication/skillgen-verified-inference-time-agent-skill-synthesis/ | Skill induction from positive/negative traces and intervention-based evaluation |
+| MSCE-2026 | https://aclanthology.org/2026.findings-emnlp.1637/ | Evidence-governed memory-to-skill transformations |
+| UCE-2026 | https://aclanthology.org/2026.emnlp-main.2188/ | Typed memory/strategy/workflow/skill evolution |
+| CROSSCODER-2026 | https://aclanthology.org/2026.findings-emnlp.433/ | Cross-repository dependency-version-aware retrieval |
+| ARB-2026 | https://arxiv.org/abs/2607.24882 | Selective repository retrieval and no-evidence cases |
+| AGENTS-NEGATIVE-2026 | https://www.sri.inf.ethz.ch/publications/gloaguen2026agentsmd | Context-file null-result and cost overhead in evaluated tasks |
+| CO-SCIENTIST-2026 | https://www.nature.com/articles/s41586-026-10644-y | Multi-agent hypothesis evolution with critique and testing |
+| ROBIN-2026 | https://www.nature.com/articles/s41586-026-10652-y | Experiment-driven multi-agent scientific discovery |
+| HIDDENBENCH-2026 | https://proceedings.mlr.press/v306/li26ej.html | Distributed evidence integration failure modes |
+| DEBATE-ACL-2026 | https://aclanthology.org/2026.findings-acl.1694/ | Confidence and diversity as conditional debate mechanisms |
+| DEBATE-COUNTER-2026 | https://arxiv.org/abs/2609.35875 | Debate may underperform budget-matched sampling |
+| EVOAGENTBENCH-2026 | https://aclanthology.org/2026.findings-emnlp.2344/ | Procedural ability transfer benchmark |
+
+Research contribution statuses: `known-prior-art`, `adaptation`, `candidate-novel-combination`, `unverified-novelty`, `supported-novelty`. The last category requires a broad prior-art audit, not merely independent LLM agreement.
