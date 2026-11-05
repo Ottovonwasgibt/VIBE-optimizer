@@ -58,3 +58,7 @@ If blocked, stop at a validated intermediate state and state precisely what rema
 ## Beyond-code task requirements
 
 When analyzing functional management, education information systems, business processes or administrative work: use the public-source-backed [domain architecture](docs/DOMAIN-OPERATIONS-CAPABILITY-ENGINE.md). Distinguish authoritative source, hypothetical diagnosis, and current local configuration. No fabricated Osiris/Studielink field names, direct production API calls, student-level data or unauthorized mutations. Validate with domain/process facts and independent human or deterministic checks, not code tests alone.
+
+## Restricted-source access boundary
+
+Licensed vendor and institution documentation may be used *only within a separate authorized deployment*. Never assume this public repository or chat has access. Do not ask the user to upload restricted manuals to public GitHub. **Local CLI is not proof of local inference**; verify the data egress policy before sending any confidential snippet to a provider model. Follow [Private Knowledge Boundary](docs/PRIVATE-KNOWLEDGE-BOUNDARY.md) for classification, permission-aware retrieval, provenance and revocation.
