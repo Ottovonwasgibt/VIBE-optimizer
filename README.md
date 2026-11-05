@@ -1,8 +1,8 @@
 # VIBE-optimizer
 
-**Capability Maximization Engine for Mistral Vibe Code — external cognitive augmentation**
+**Capability Maximization Engine — external cognitive augmentation for complex knowledge work**
 
-A research-first project to unlock the maximum **effective capability of a single coding agent**, initially Mistral Vibe, using knowledge, skills, specialized computation, verified memory, adaptive inference and controlled verification. Multiple models are optional research tools, **not** the design goal.
+A research-first project to unlock the maximum **effective capability of one task-solving agent**, initially using Mistral Vibe. External libraries, operational process models, verified knowledge, procedures, tools, memory and validation should improve **coding and non-coding work**—including functional management of student information systems. Multiple models are optional research tools, **not** the design goal.
 
 > **Status:** research-backed design and bootstrap, **not** a working autonomous coding agent. The two external Deep Research reports discussed in the originating conversation have **not yet been imported or independently audited**. Do not mistake design sketches for implemented integrations.
 
@@ -117,3 +117,13 @@ Two **actual executable infrastructure tests** have now been run and independent
 - [GitHub Actions reproduction: success](https://github.com/Ottovonwasgibt/VIBE-optimizer/actions/runs/42038453644)
 
 Tool-workbench proxy: 24 synthetic tools, 28 hand-authored tasks; scoped/decomposed selection selected the correct compatible slate on **26/28** cases at top-3 versus **18/28** for plain lexical search. Real Pydantic compatibility smoke test: **v2-only methods 0/7 on v1 compatibility API** versus **7/7 on v2 API**. These observations support pursuing real model A/B experiments; they **do not** establish improved Vibe task-solving performance.
+
+## Beyond coding: functional management and higher education
+
+The same workbench is intended for process analysis, operational diagnostics, application/authorization configuration review, integration troubleshooting, reporting and change management—not only writing scripts.
+
+- [Domain-agnostic operational capability architecture](docs/DOMAIN-OPERATIONS-CAPABILITY-ENGINE.md)
+- [Higher education functional management domain pack: Osiris, Studielink and DUO](docs/DOMAIN-DESIGNS/01-higher-education-functional-management.md)
+- [Synthetic higher education research tasks](experiments/domains/higher-education/synthetic-cases.json)
+
+**No live Osiris or Studielink connection is assumed.** Public system descriptions and synthetic tasks do not authorize use of student data, administrative mutations or resubmitting messages. In operational domains the evaluation must test correctness of decisions, evidence, dates, process understanding and safe escalation as well as any generated code.
