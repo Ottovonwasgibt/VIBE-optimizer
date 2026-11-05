@@ -1,0 +1,50 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Vibe local/plugin runtime data
+.vibe/.env
+.vibe/data/
+.vibe/cache/
+.vibe/sessions/
+runtime/
+data/
+datasets/private/
+resources/raw/
+resources/staged/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+# Search indexes, session artifacts
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.log
+coverage/
+.coverage
+outputs/
+experiments/results/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
