@@ -131,3 +131,16 @@ The same workbench is intended for process analysis, operational diagnostics, ap
 ## Restricted documentation in an authorized deployment
 
 Closed vendor manuals and institution-internal Osiris/Studielink documentation **may be consulted in a separately authorized environment**; they are not accessible from this public GitHub/ChatGPT project. [Private Knowledge Boundary](docs/PRIVATE-KNOWLEDGE-BOUNDARY.md) describes permission-aware local indexes, source classification, model data egress and safe retrieval. **A local Vibe CLI does not necessarily mean local model inference:** do not send restricted excerpts to an external model endpoint until that processing is expressly approved.
+
+
+## Restricted documentation: the method and scaffold, not the documents
+
+The public repository includes a **runnable, fail-closed synthetic prototype** of permission-aware retrieval and destination-based data release. It contains **no closed Osiris/Studielink manuals or real student data**.
+
+- [Technical implementation method](docs/TECHNICAL-DESIGNS/07-private-source-scaffold.md) — source staging, classification, rights, access, egress, source revision, evidence and approval.
+- [Policy-aware Python gateway](src/vibe_optimizer/private_knowledge.py) — prototype code (no real identity or private storage integration).
+- [Unit tests](tests/test_private_knowledge.py) — role, tenant, purpose, date, status, content hash and model destination checks.
+- [Synthetic runnable demonstration](examples/private-knowledge/demo.py) — shows a simulated private snippet blocked to public model destination.
+- [Source manifest JSON Schema](schemas/private-source-manifest.schema.json) and [fictional staged manifest](examples/private-knowledge/synthetic-manifest.json) — data contracts, **not proof of approved rights**.
+
+Run \`python examples/private-knowledge/demo.py\` and \`python -m unittest discover -s tests -v\` from the repository root. The prototype is not an Osiris connector, production authentication service, protected persistent index or model-network security boundary. A real deployment still requires institution-approved authorization and infrastructure.
