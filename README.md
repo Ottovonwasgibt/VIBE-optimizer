@@ -97,3 +97,12 @@ python -m unittest discover -s tests -v
 ~~~
 
 The formulas and thresholds describe **assumptions and research questions**, not certified scientific findings or numerical guarantees of improved coding-agent intelligence.
+
+## Capability Library & Stack Atlas (research direction)
+
+A structured external library goes beyond RAG text chunks: it combines **version-matched API manuals**, **tested function patterns**, **reviewed scripts**, **complete stack recipes**, **conditional skills**, and **known failures**. These are progressively discovered on demand, not globally injected into context.
+
+- [Technical design TDD-08: Capability Library & Software Stack Atlas](docs/TECHNICAL-DESIGNS/06-capability-library-stack-atlas.md)
+- [Research issue #8: benchmark capability packs against docs, skills and scripts](https://github.com/Ottovonwasgibt/VIBE-optimizer/issues/8)
+
+Grounding: DocPrompting, RepoCoder, Repoformer, CodeRAG-Bench, LibEvoBench, SkillsBench and SWE-Skills-Bench. Published work supports individual interventions but **does not yet prove a combined uplift** for this project. Pack manifests and example stack versions are only drafts until actual source/lockfile verification.
