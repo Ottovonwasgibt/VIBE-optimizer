@@ -189,3 +189,9 @@ Do not start by uploading live production tickets or user-identifiable student c
 - DUO RIO education registry: https://rio-kennisbank.duo.nl/6-ho/aa-wat-is-rio-ho.jsp
 
 **Next testable engineering slice:** a *synthetic* read-only event-timeline reconciler plus a human-scored incident response benchmark. The model should explain why it proposes each check and what observation would refute the diagnosis.
+
+## Practical deployment correction: closed manuals are useful, but accessed elsewhere
+
+The target institutional agent **can use approved restricted Osiris/Studielink documentation** in a separate permissioned environment. That source material is not available in this public ChatGPT session or repository; no license-restricted manuals need to be uploaded here. Public research outputs should provide schemas and methods for an internal implementation rather than the documents themselves.
+
+See [Private Knowledge Boundary](../PRIVATE-KNOWLEDGE-BOUNDARY.md). In particular: access to a local document does not mean permission to transmit it to a remote model API. Before using a private source, check institution rights, endpoint processing authorization, principal scope, logging/retention and whether only metadata or approved excerpts may enter the model context.
