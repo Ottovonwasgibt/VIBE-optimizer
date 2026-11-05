@@ -127,3 +127,7 @@ The same workbench is intended for process analysis, operational diagnostics, ap
 - [Synthetic higher education research tasks](experiments/domains/higher-education/synthetic-cases.json)
 
 **No live Osiris or Studielink connection is assumed.** Public system descriptions and synthetic tasks do not authorize use of student data, administrative mutations or resubmitting messages. In operational domains the evaluation must test correctness of decisions, evidence, dates, process understanding and safe escalation as well as any generated code.
+
+## Restricted documentation in an authorized deployment
+
+Closed vendor manuals and institution-internal Osiris/Studielink documentation **may be consulted in a separately authorized environment**; they are not accessible from this public GitHub/ChatGPT project. [Private Knowledge Boundary](docs/PRIVATE-KNOWLEDGE-BOUNDARY.md) describes permission-aware local indexes, source classification, model data egress and safe retrieval. **A local Vibe CLI does not necessarily mean local model inference:** do not send restricted excerpts to an external model endpoint until that processing is expressly approved.
