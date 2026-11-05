@@ -144,3 +144,7 @@ The public repository includes a **runnable, fail-closed synthetic prototype** o
 - [Source manifest JSON Schema](schemas/private-source-manifest.schema.json) and [fictional staged manifest](examples/private-knowledge/synthetic-manifest.json) — data contracts, **not proof of approved rights**.
 
 Run \`python examples/private-knowledge/demo.py\` and \`python -m unittest discover -s tests -v\` from the repository root. The prototype is not an Osiris connector, production authentication service, protected persistent index or model-network security boundary. A real deployment still requires institution-approved authorization and infrastructure.
+
+## Community practice and frontier-forum evidence (2026-11-05)
+
+[Community Field Scan](research/COMMUNITY-FIELD-SCAN-2026-11-05.md) examines twelve practice patterns and counterexamples from Reddit, Hacker News, GitHub projects and issue trackers: Superpowers, gstack browser scriptification, Ralph, Beads, claude-mem, Serena, Context7, hooks, silent skill activation, underused LSP tools and skill supply-chain findings. It separates inspectable implementations, author evaluations, user anecdotes and observational research; **no community code was automatically installed**.
