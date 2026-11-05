@@ -170,3 +170,17 @@ The Vibe hook can only nudge the agent at **the next tool event**, not while the
 - [Watchdog safety gate](src/vibe_optimizer/watchdog_gate.py): remembers a safety hold until an **externally authorized** release; enforcement in the real agent host is still pending.
 
 **Important:** Detection of a simulated anomaly is not a demonstrated improvement in task success. The live Vibe hook is opt-in and has not been proven to change outcomes.
+
+## Integrated capability system v0.2 — runnable research scaffolds
+
+The architecture is now linked into a **synthetic, advisory-only end-to-end cycle** rather than just independent proposals. It is **not** yet an autonomous agent or evidence of improved real Vibe task performance.
+
+- [Integrated Capability Cycle](docs/INTEGRATED-CAPABILITY-CYCLE.md): architecture, implementation status, host permissions and release gates.
+- [Workbench getting started](examples/capability-workbench/README.md): offline cross-domain demo, the public synthetic catalog, a tested optional MCP Python SDK v2 bridge, and on-demand Vibe skills.
+- [Integrated CI smoke (synthetic)](https://github.com/Ottovonwasgibt/VIBE-optimizer/actions/workflows/integrated-cycle.yml): public SQLite source -> search -> task triage -> evidence packet -> checkpoint -> safe recipe -> simulated review -> paired evaluation.
+- [MCP v2 SDK smoke](https://github.com/Ottovonwasgibt/VIBE-optimizer/actions/runs/42053782097): real in-memory MCP client invoked three public advisory tools; **not** an installed Vibe session.
+- [Function/Script Workshop](src/vibe_optimizer/recipe_compiler.py): declarative, bounded pure transformations with [synthetic fixtures](examples/script-workshop/synthetic-recipe.json), not arbitrary program execution.
+- [Paired evaluator](experiments/live_agent/paired_eval.py) and [explicitly fictional scores](experiments/live_agent/synthetic_results.json): a reporting contract for future fixed-model A/B trials.
+
+The project-skills `/cognitive:capability-check` and `/cognitive:checkpoint-review` are available for manual Vibe discovery after trusting/reloading this repo's existing plugin. They do not install servers or change tool permissions. Actual model evaluation remains an open milestone.
+
