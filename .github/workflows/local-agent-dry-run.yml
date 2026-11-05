@@ -1,0 +1,22 @@
+name: Local agent A/B launcher dry-run
+on:
+  push:
+    paths:
+      - 'experiments/live_agent/**'
+      - 'tests/test_local_agent_runner.py'
+      - '.github/workflows/local-agent-dry-run.yml'
+  workflow_dispatch:
+jobs:
+  no-model-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate launcher and public synthetic task suite
+        run: python -m unittest discover -s tests -p test_local_agent_runner.py -v
+      - name: Verify dry-run never invokes an LLM
+        run: python experiments/live_agent/run_local.py --suite experiments/live_agent/public_synthetic_suite.json --output runtime/CI-dry-run
+      - name: Inspect ungraded dry-run manifest
+        run: python -c "import json; p=json.load(open('runtime/CI-dry-run/manifest.json')); assert p['mode']=='DRY_RUN'; assert len(p['sessions'])==8"
