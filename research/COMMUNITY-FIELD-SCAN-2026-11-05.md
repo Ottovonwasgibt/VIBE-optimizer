@@ -149,3 +149,17 @@ The highest-value community signals for VIBE-optimizer are **(a) codify repeated
 The community also supplies clear **negative evidence**: silent skill loading failures, stale memories, over-engineering due to large frameworks, never-invoked LSP tools and unsafe unreviewed skill distributions. Treat every source as a hypothesis lead, not proof of system-wide uplift.
 
 **No code, model, plugin or community script was installed from this scan.**
+
+
+## Later addition: documentation-to-skill conversion
+
+### F13 — Skill Seekers: public docs, repositories, PDFs and specifications to structured skills (I)
+Source: https://github.com/yusufkaraaslan/Skill_Seekers/
+Concrete skill spec: https://github.com/yusufkaraaslan/Skill_Seekers/blob/development/skills/skill-seekers/SKILL.md
+Release note: https://github.com/yusufkaraaslan/Skill_Seekers/releases
+
+The maintained Python project ingests documentation sites, code repositories and many file types, extracts examples, splits large documentation into focused skills and exports to agent platforms or retrieval indexes. Its releases include source-conflict handling, docs configuration, a local CLI/MCP and executable debugging/doctor commands. This is close to our **Capability Library compiler**.
+
+**Research gap:** exporting a syntactically valid \`SKILL.md\` does not prove version correctness, sufficient API coverage, behavior under unusual tasks, executable tests or authorization to redistribute source text. For a private university deployment, source extraction must stay inside an approved boundary, and any remote enhancement step must be explicitly allowed.
+
+**VIBE idea:** compare hand-authored skill vs auto-converted docs vs versioned evidence-linked pack + executable tests, using blinded tasks, no unauthorized docs and review of false or contradictory generated instructions. The important deliverable is a **verified, updateable capability unit**, not an enormous pile of auto-generated skills.
