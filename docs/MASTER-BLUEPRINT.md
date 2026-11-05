@@ -4,7 +4,7 @@
 
 ## Mission
 
-**Maximize what one fixed-weight coding model can actually accomplish**, initially using Mistral Vibe Code. Externally augment its knowledge, reusable methods, executable computation, verified memory, deliberate reasoning and adaptive resource allocation. Define progress as independently verified solutions to harder unseen tasks, not number of installed agents/plugins. This is the primary [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md).
+**Maximize what one fixed-weight task-solving model can actually accomplish**, initially using Mistral Vibe Code. Externally augment its knowledge, reusable methods, executable computation, verified memory, deliberate reasoning and adaptive resource allocation. Define progress as independently verified **task outcomes across domains**, not number of installed agents/plugins. Code is one domain; functional management, integration analysis, administrative processes and evidence-based operational decisions are equally important. This is the primary [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md).
 
 Multiagent collaboration is *optional* and must beat a budget-matched single-model alternative before it becomes part of the preferred architecture. Do not modify base model weights as part of the initial stack.
 
@@ -77,3 +77,11 @@ The overarching goal is to maximize **single-model effective capability** and bu
 Our primary deliverables are **explanatory models, falsifiable hypotheses, alternative mechanism designs, technical specifications, and discriminating experiments**. Production-grade implementation is a later consequence of surviving experiments. The small SQLite/CLI implementation is only an initial instrumentation scaffold.
 
 The project's original five-layer architecture remains a proposal, not a conclusion. New components should emerge from the research cycle `evidence → theory → rival explanation → hypothesis → small test → revision`, not from architectural fashion or model consensus. Multi-model research is one **optional scientific technique**, not a goal or required architectural dependency. Independent measurement and budget-matched single-model controls are required before claims of improvement.
+
+## Cross-domain mission clarification (2026-11-05)
+
+The engine must support **functional administration and knowledge-intensive operational work**, not only software development. A first reference domain is higher-education functional management across Osiris, Studielink, DUO and institution processes. Required external cognitive resources include process/state models, current vendor contracts, dated regulations, status maps, safe diagnostic queries, escalation playbooks, authorization boundaries and verified examples.
+
+See [domain-independent architecture](DOMAIN-OPERATIONS-CAPABILITY-ENGINE.md) and [higher-education domain design](DOMAIN-DESIGNS/01-higher-education-functional-management.md).
+
+Every domain requires its own **outcome oracle**. For code it might be tests; for operations it may be a verified incident diagnosis, correct next check, process compliance, approved change plan, accurate status reconciliation and avoidance of unsafe actions. A production student record mutation is not an acceptable test of the agent.
