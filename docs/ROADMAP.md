@@ -87,12 +87,16 @@ No private-data indexing, remote scraping without rights, autonomous memory appr
 
 **R0 — Conceptual foundation:** maintain a live source/claim registry, establish TECA constructs and counter-theories, distinguish prior art from a candidate contribution.
 
-**R1 — Hypothesis design:** preregister 3–4 discriminating studies with positive, negative, and budget-matched controls. Start with H-01 (selective retrieval), H-03 (verified procedural skills), H-07 (independent multi-model scientific work) and H-09 (capability-deficit routing).
+**R1 — Hypothesis design:** preregister 3–4 discriminating studies with positive, negative, and budget-matched controls. Prioritize H-01 (selective retrieval), H-03 (verified procedural skills), H-06 (active verification) and H-09 (capability-deficit routing). H-07 (multi-model research) is optional, not foundational.
 
-**R2 — Multi-model research:** use independently frozen prompts and evidence packets for Vibe and other available models; test whether diverse proposals beat same-model best-of-N under equal budget. Retain all disagreements and negative observations.
+**R2 — Single-model capability frontier:** compare bare Vibe, budget-matched repeated inference, augmented Vibe, and optional high-budget deliberate mode. Identify which previously unsolved task classes become reliably solvable. Multi-model research is a secondary controlled experiment only when valuable.
 
 **R3 — Minimal scientific instruments:** build only tools/scripts needed to test claims—hypothesis linter, evidence provenance graph, prompt snapshot, read-only retrieval, AST map, simple verifier/evaluator.
 
 **R4 — Theory revision:** record supported, refuted, mixed and unresolved propositions; refine architectural choice only when results justify it.
 
 The older implementation phases below remain **candidate engineering work**, not commitments. Avoid optimising directly for a large feature count.
+
+## Mission correction: capability maximization first
+
+The main goal is the [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md): unlock the maximum verified coding/problem-solving ability from **one** fixed model using external knowledge, procedures, tools, verified experience, adaptive context and deliberate inference. Extra agents/models are not a milestone. Evaluate them only when a specific gap warrants the comparison. Use this as the priority order for future work; older roadmap entries are subordinate.
