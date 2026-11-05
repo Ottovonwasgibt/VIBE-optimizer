@@ -197,3 +197,70 @@ Every experiment must predeclare:
 **Prior art:** https://github.com/oraios/serena ; https://github.com/snarktank/ralph ; https://www.anthropic.com/research/effective-harnesses-for-long-running-agents ; https://www.microsoft.com/en-us/research/publication/benchmarking-long-horizon-agent-context-compaction-with-compactionbench/
 
 **Research warning:** Creating warnings and detecting synthetic conditions does not demonstrate that a model notices, acknowledges, obeys, or benefits from them. Do not label H-17 as empirically confirmed.
+
+
+## H-11 — Tool discovery and real host delivery
+
+**Claim:** A qualified, searchable catalog increases correct use of available capabilities versus static/global tool lists at matched budget, **provided that discovered tools are actually delivered to the agent**.
+
+**Competing explanation:** naming/description quality or prompt token differences, rather than discovery itself, cause gains.
+
+**Evaluation:** same pinned model on held-out multi-tool and no-tool tasks: static tools, searchable catalog, search+host-delivery audit. Measure set completeness, actual host-visible tool list, calls, safe task resolution and cost.
+
+**Status:** synthetic catalog search and MCP v2 in-memory delivery tests only; no actual Vibe-task uplift demonstrated. See [TDD-07](../docs/TECHNICAL-DESIGNS/05-adaptive-tool-workbench.md) and [catalog](../src/vibe_optimizer/capability_registry.py).
+
+## H-12 — Tool adequacy probing
+
+**Claim:** Version/health/permission/suitability checks reduce incompatible calls and wasted attempts, more than an equal-budget extra-reasoning control.
+
+**Refutation:** filters discard useful tools or their overhead exceeds time saved.
+
+**Status:** toy search policy and versioned Pydantic API smoke tests executed; no agent causal experiment. See [pilot](EXPERIMENT-REPORT-2026-11-05.md).
+
+## H-13 — Tool reuse and safe composition
+
+**Claim:** A single agent using a verified composition of existing tools resolves more new tasks, at the same budget, than reasoning longer or selecting a new untested tool.
+
+**Refutation:** unnecessary complexity, hidden dependency side effects, or no transfer to unseen tasks.
+
+**Status:** proposed; only pure allowlisted declarative recipe transformations and tests exist. See [recipe compiler](../src/vibe_optimizer/recipe_compiler.py).
+
+## H-14 — Script/skill synthesis transfer
+
+**Claim:** A reviewed tool made from a previously solved task transfers to a new task family, and future savings outweigh development, testing and maintenance costs.
+
+**Comparisons:** no script vs plain instructions vs synthesized candidate vs independently qualified/pinned script.
+
+**Safety:** staged script text has no permission to run; independent review required.
+
+**Status:** candidate metadata and pure recipe fixture tested; general sandboxed program synthesis and real agent transfer not implemented. See [candidate governance](../src/vibe_optimizer/candidate_governance.py).
+
+## H-15 — Domain pack transfer beyond coding
+
+**Claim:** A process/state/technical evidence pack improves an agent's independent resolution of unseen *noncoding* operational tasks compared with baseline and raw public docs.
+
+**Refutation:** fabricated tenant configuration, incorrect regulatory date, overconfidence or no outcome gain.
+
+**Status:** eight fictional higher education cases and public domain-pack design; no actual model/domain-expert grading. See [domain pack](../docs/DOMAIN-DESIGNS/01-higher-education-functional-management.md).
+
+## H-16 — Permission-aware institutional knowledge
+
+**Claim:** In a separately approved deployment, a versioned, properly authorized private knowledge store improves operational diagnosis without prohibited data egress.
+
+**Safety requirement:** identity- and purpose-scoped retrieval, model endpoint policy, licensed document rights, revocation, audit and human approval for operations.
+
+**Status:** fictional access-control policy tests only; no real Osiris/Studielink documentation or connector and no approved production deployment. See [Private Knowledge Boundary](../docs/PRIVATE-KNOWLEDGE-BOUNDARY.md).
+
+## H-18 — Capability utilization observatory
+
+**Claim:** Monitoring the difference between tools configured, actually delivered, invoked and independently relevant makes adaptive tool selection/retirement more effective than maintaining every tool permanently.
+
+**Alternative:** most tools are naturally seldom used; retiring them can harm rare but important tasks.
+
+**Comparisons:** stable catalog vs usage-based nudging vs qualified hot/cold shelf; include very rare-task negative controls and memory/latency measurements.
+
+**Status:** deterministic [delivery audit](../src/vibe_optimizer/capability_delivery.py) and sanitized [watchdog trace](../experiments/watchdog/observatory.py) tested on fictional data; no actual agent host usage traces.
+
+## Cross-hypothesis integration rule
+
+H-11 through H-18 are **not cumulative percentage bonuses**. The interaction terms may be positive or negative: search may add overhead, skills may override task plans, memories may become stale, and checkpoints may interrupt productive work. Compare each intervention, simpler alternatives and the *combined* stack on the same fixed model, matched budget and genuinely held-out tasks. For current component status see [Integrated Capability Cycle](../docs/INTEGRATED-CAPABILITY-CYCLE.md).
