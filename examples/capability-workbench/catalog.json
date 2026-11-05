@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "cards": [
+    {
+      "capability_id": "api_pydantic_1",
+      "kind": "manual",
+      "description": "Pydantic v1 model validation and dict serialization documentation",
+      "keywords": [
+        "pydantic",
+        "validate",
+        "model",
+        "parse_obj",
+        "dict",
+        "version",
+        "api"
+      ],
+      "triggers": [
+        "pydantic v1"
+      ],
+      "exclusions": [],
+      "requires_versions": {
+        "pydantic": "1"
+      },
+      "environment": [],
+      "status": "qualified",
+      "permission": "public_read",
+      "classification": "PUBLIC",
+      "health": "not_applicable",
+      "source": "synthetic://capability-catalog/api_pydantic_1",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "api_pydantic_2",
+      "kind": "manual",
+      "description": "Pydantic v2 model validation and serialization documentation",
+      "keywords": [
+        "pydantic",
+        "validate",
+        "model",
+        "model_validate",
+        "model_dump",
+        "version",
+        "api"
+      ],
+      "triggers": [
+        "pydantic v2"
+      ],
+      "exclusions": [],
+      "requires_versions": {
+        "pydantic": "2"
+      },
+      "environment": [],
+      "status": "qualified",
+      "permission": "public_read",
+      "classification": "PUBLIC",
+      "health": "not_applicable",
+      "source": "synthetic://capability-catalog/api_pydantic_2",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "repo_symbol_lookup",
+      "kind": "tool",
+      "description": "Find code symbols and callsites in a repository",
+      "keywords": [
+        "repository",
+        "code",
+        "symbols",
+        "callers",
+        "find",
+        "python"
+      ],
+      "triggers": [
+        "find symbols"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [
+        "linux",
+        "windows"
+      ],
+      "status": "qualified",
+      "permission": "execute",
+      "classification": "PUBLIC",
+      "health": "healthy",
+      "source": "synthetic://capability-catalog/repo_symbol_lookup",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "xml_fixture_validator",
+      "kind": "verifier",
+      "description": "Validate synthetic XML against local declared XSD contract",
+      "keywords": [
+        "xml",
+        "xsd",
+        "validate",
+        "schema",
+        "message",
+        "contract"
+      ],
+      "triggers": [
+        "validate xml"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "execute",
+      "classification": "PUBLIC",
+      "health": "healthy",
+      "source": "synthetic://capability-catalog/xml_fixture_validator",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "higher_ed_process",
+      "kind": "manual",
+      "description": "Fictional higher education enrollment process model and state semantics",
+      "keywords": [
+        "enrollment",
+        "process",
+        "status",
+        "studielink",
+        "osiris",
+        "duo",
+        "institution"
+      ],
+      "triggers": [
+        "enrollment process"
+      ],
+      "exclusions": [
+        "production mutation"
+      ],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "public_read",
+      "classification": "PUBLIC",
+      "health": "not_applicable",
+      "source": "synthetic://capability-catalog/higher_ed_process",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "incident_diagnosis",
+      "kind": "procedure",
+      "description": "Read-only incident analysis from evidence timeline and handoff",
+      "keywords": [
+        "incident",
+        "diagnosis",
+        "timeline",
+        "message",
+        "integration",
+        "status"
+      ],
+      "triggers": [
+        "incident diagnosis"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "public_read",
+      "classification": "PUBLIC",
+      "health": "not_applicable",
+      "source": "synthetic://capability-catalog/incident_diagnosis",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "tested_conversion",
+      "kind": "script",
+      "description": "Fictional candidate parser utility that has not been qualified",
+      "keywords": [
+        "convert",
+        "parser",
+        "csv",
+        "json",
+        "script"
+      ],
+      "triggers": [
+        "convert csv"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [],
+      "status": "candidate",
+      "permission": "execute",
+      "classification": "PUBLIC",
+      "health": "unknown",
+      "source": "synthetic://capability-catalog/tested_conversion",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "pending"
+    },
+    {
+      "capability_id": "restricted_vendor_manual",
+      "kind": "manual",
+      "description": "Illustrative restricted documentation metadata only",
+      "keywords": [
+        "osiris",
+        "manual",
+        "restricted",
+        "role",
+        "authorization"
+      ],
+      "triggers": [
+        "osiris manual"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "approved_read",
+      "classification": "RESTRICTED",
+      "health": "not_applicable",
+      "source": "synthetic://private-not-loaded",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "unsafe_admin_write",
+      "kind": "tool",
+      "description": "Fictional high-risk write action requiring separate privileges",
+      "keywords": [
+        "enrollment",
+        "write",
+        "student",
+        "register",
+        "update"
+      ],
+      "triggers": [
+        "update enrollment"
+      ],
+      "exclusions": [],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "write",
+      "classification": "PUBLIC",
+      "health": "unknown",
+      "source": "synthetic://capability-catalog/unsafe_admin_write",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    },
+    {
+      "capability_id": "healthy_public_noop",
+      "kind": "procedure",
+      "description": "Guide to simple conceptual responses without external tool use",
+      "keywords": [
+        "definition",
+        "concept",
+        "explain",
+        "theory"
+      ],
+      "triggers": [],
+      "exclusions": [
+        "troubleshoot"
+      ],
+      "requires_versions": {},
+      "environment": [],
+      "status": "qualified",
+      "permission": "public_read",
+      "classification": "PUBLIC",
+      "health": "not_applicable",
+      "source": "synthetic://capability-catalog/healthy_public_noop",
+      "revision": "fixture-1",
+      "tests": [
+        "synthetic-metadata-inspection"
+      ],
+      "license_review": "approved"
+    }
+  ]
+}
