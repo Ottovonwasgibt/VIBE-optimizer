@@ -1,10 +1,12 @@
-# Master Blueprint v1.0 — External Cognitive Augmentation
+# Master Blueprint v1.1 — Capability Maximization through External Cognitive Augmentation
 
 **Status:** architecture proposal synthesized from the present conversation; external Deep Research reports not yet imported. **Date:** 2026-11-05.
 
 ## Mission
 
-Build a maintainable extension to Mistral Vibe Code that improves real software-engineering outcomes by supplying relevant external evidence, procedural skills, trusted code tools, verifiers, and reviewed memory **without modifying model weights**.
+**Maximize what one fixed-weight coding model can actually accomplish**, initially using Mistral Vibe Code. Externally augment its knowledge, reusable methods, executable computation, verified memory, deliberate reasoning and adaptive resource allocation. Define progress as independently verified solutions to harder unseen tasks, not number of installed agents/plugins. This is the primary [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md).
+
+Multiagent collaboration is *optional* and must beat a budget-matched single-model alternative before it becomes part of the preferred architecture. Do not modify base model weights as part of the initial stack.
 
 ### Taxonomy of capability
 
@@ -70,8 +72,8 @@ See `docs/ARCHITECTURE.md` and `docs/ROADMAP.md`; file architecture decisions in
 
 ## Research-first addendum — theory, not just infrastructure
 
-The overarching goal is to build and test a **working causal theory** of how external knowledge, procedure, tools, episodic experience, validation and task-aware routing interact to change a fixed model's effective capability. Read [TECA](THEORY-OF-EXTERNAL-COGNITION.md), the [hypothesis registry](../research/HYPOTHESIS-REGISTRY.md), the [frontier dossier](../research/FRONTIER-EVIDENCE-DOSSIER.md) and the [multi-model laboratory protocol](MULTI-MODEL-RESEARCH-LAB.md) before prioritizing an architectural component.
+The overarching goal is to maximize **single-model effective capability** and build and test a **working causal theory** of how external knowledge, procedure, tools, episodic experience, validation and task-aware routing interact to change a fixed model's effective capability. Read [TECA](THEORY-OF-EXTERNAL-COGNITION.md), the [hypothesis registry](../research/HYPOTHESIS-REGISTRY.md), the [frontier dossier](../research/FRONTIER-EVIDENCE-DOSSIER.md) and the [multi-model laboratory protocol](MULTI-MODEL-RESEARCH-LAB.md) before prioritizing an architectural component.
 
 Our primary deliverables are **explanatory models, falsifiable hypotheses, alternative mechanism designs, technical specifications, and discriminating experiments**. Production-grade implementation is a later consequence of surviving experiments. The small SQLite/CLI implementation is only an initial instrumentation scaffold.
 
-The project's original five-layer architecture remains a proposal, not a conclusion. New components should emerge from the research cycle `evidence → theory → rival explanation → hypothesis → small test → revision`, not from architectural fashion or model consensus. Multi-model research can expand the candidate search space, but independent measurement and budget-matched controls are required before claims of improvement.
+The project's original five-layer architecture remains a proposal, not a conclusion. New components should emerge from the research cycle `evidence → theory → rival explanation → hypothesis → small test → revision`, not from architectural fashion or model consensus. Multi-model research is one **optional scientific technique**, not a goal or required architectural dependency. Independent measurement and budget-matched single-model controls are required before claims of improvement.
