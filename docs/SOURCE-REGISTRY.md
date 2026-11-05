@@ -85,3 +85,24 @@ The following source pages were inspected on 2026-11-05. **Full evaluation code,
 | EVOAGENTBENCH-2026 | https://aclanthology.org/2026.findings-emnlp.2344/ | Procedural ability transfer benchmark |
 
 Research contribution statuses: `known-prior-art`, `adaptation`, `candidate-novel-combination`, `unverified-novelty`, `supported-novelty`. The last category requires a broad prior-art audit, not merely independent LLM agreement.
+
+
+## Quantitative capability frontier and tool-workbench research (added 2026-11-05)
+
+Detailed modeling: [Quantitative Capability Models](../research/QUANTITATIVE-CAPABILITY-MODELS.md).
+The calculations are **toy models, not observed Vibe performance**.
+
+| ID | Primary source | How it informs the next studies |
+| --- | --- | --- |
+| ANTH-TOOL-SEARCH | https://www.anthropic.com/research/advanced-tool-use | Defer tool definitions, lazy discovery, programmatic calling, tool invocation examples; vendor-reported results not transferable automatically |
+| FOUNDRY-TOOL-SEARCH | https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/tool-search | Searchable toolboxes and per-turn discovery; separate visibility from permissions |
+| AISI-COMPUTE | https://www.aisi.gov.uk/blog/more-compute-more-capability-why-ai-agent-evals-need-to-account-for-test-time-compute | Test-time compute and agent task horizon, budget-sensitivity of measured capability |
+| CATS-2026 | https://research.google/pubs/cost-effective-agent-test-time-scaling/ | Compare token and tool-call cost under budget-aware agent scaling |
+| MULTI-TOOL-2026 | https://arxiv.org/abs/2610.41905 | Joint tool-set completeness and its cost versus per-tool recall; preprint, published 2026-10-30 |
+| TRIDENT-2026 | https://aclanthology.org/2026.findings-emnlp.1862/ | Failure attribution across tool-use judgment, planning and execution |
+| AUTOTOOL-2026 | https://proceedings.mlr.press/v306/zou26p.html | Dynamic tool selection via training; contrast with our fixed-weight approach |
+| SKILLCRAFT-2026 | https://arxiv.org/abs/2603.00718 | Reusable tool compositions and efficiency, research preprint |
+| TOOL-MAKING-2026 | https://arxiv.org/abs/2607.08010 | Versioned tool synthesis/reuse and deployment tradeoffs; research preprint |
+| AGENT-TTC-2026 | https://arxiv.org/abs/2604.16529 | How agent rollout representation and reuse affect test-time scaling |
+
+**Validation gate:** read the full primary methods, inspect available code/artifacts and licensing, and pin source versions before converting reported effect sizes into hypotheses with predicted magnitudes.
