@@ -8,6 +8,7 @@ A Vibe hook is not an independent timer: it fires only after executed tools.
 from __future__ import annotations
 
 import hashlib
+from contextlib import closing
 import json
 import os
 from pathlib import Path
@@ -67,7 +68,7 @@ def handle_event(payload: dict, *, database: Path | None = None,
     db = database or _storage_path()
     db.parent.mkdir(parents=True, exist_ok=True)
 
-    with sqlite3.connect(db, timeout=5) as con:
+    with closing(sqlite3.connect(db, timeout=5)) as con, con:
         con.execute("PRAGMA busy_timeout=5000")
         con.execute(
             "CREATE TABLE IF NOT EXISTS sessions "
