@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "trace_id": "synthetic_session_fixture_01",
+  "events": [
+    {
+      "step": 1,
+      "elapsed_seconds": 0,
+      "tool_class": "specialized",
+      "tool_result": "success",
+      "progress": "verified",
+      "tool_fit": "not_applicable",
+      "context_fraction": 0.23,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 2,
+      "elapsed_seconds": 55,
+      "tool_class": "specialized",
+      "tool_result": "success",
+      "progress": "verified",
+      "tool_fit": "not_applicable",
+      "context_fraction": 0.26,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 3,
+      "elapsed_seconds": 110,
+      "tool_class": "specialized",
+      "tool_result": "success",
+      "progress": "verified",
+      "tool_fit": "not_applicable",
+      "context_fraction": 0.29000000000000004,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 4,
+      "elapsed_seconds": 165,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.32,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 5,
+      "elapsed_seconds": 220,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.35,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 6,
+      "elapsed_seconds": 275,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.38,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 7,
+      "elapsed_seconds": 330,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.41000000000000003,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 8,
+      "elapsed_seconds": 385,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.44,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 9,
+      "elapsed_seconds": 440,
+      "tool_class": "generic",
+      "tool_result": "failure",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.47000000000000003,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 10,
+      "elapsed_seconds": 495,
+      "tool_class": "generic",
+      "tool_result": "failure",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.5,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 11,
+      "elapsed_seconds": 550,
+      "tool_class": "generic",
+      "tool_result": "failure",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.53,
+      "critical_action": false,
+      "unsafe_operation": false
+    },
+    {
+      "step": 12,
+      "elapsed_seconds": 605,
+      "tool_class": "generic",
+      "tool_result": "success",
+      "progress": "not_verified",
+      "tool_fit": "confirmed",
+      "context_fraction": 0.56,
+      "critical_action": false,
+      "unsafe_operation": false
+    }
+  ]
+}
