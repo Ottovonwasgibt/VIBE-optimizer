@@ -1,6 +1,6 @@
 # Working instructions for coding agents
 
-**Project mission:** maximize the verified, effective capability of **one coding model (initially Vibe)** using external cognitive resources. Do not default to multi-agent swarms. Read `docs/CAPABILITY-MAXIMIZATION.md` before selecting components; justify any other model/subagent using budget-matched evaluation.
+**Project mission:** maximize the verified, effective capability of **one task-solving model (initially Vibe), across coding and operational domains** using external cognitive resources. Do not default to multi-agent swarms. Read `docs/CAPABILITY-MAXIMIZATION.md` before selecting components; justify any other model/subagent using budget-matched evaluation.
 
 Read this entire file before editing. This repository contains an **unimplemented research blueprint** as well as future executable components; distinguish them in every response.
 
@@ -54,3 +54,7 @@ If blocked, stop at a validated intermediate state and state precisely what rema
 ## Research-first amendment (2026-11-05)
 
 **Before implementing a new component:** read `docs/THEORY-OF-EXTERNAL-COGNITION.md`, `research/HYPOTHESIS-REGISTRY.md`, `research/FRONTIER-EVIDENCE-DOSSIER.md` and `docs/MULTI-MODEL-RESEARCH-LAB.md`. Start with a falsifiable hypothesis and a minimal discriminating experiment. Investigate prior art. Do not infer research novelty from a model's wording or consensus. Distinguish model-generated suggestions from independently verified findings. Prefer small technical proposals and research instruments to feature-heavy implementation.
+
+## Beyond-code task requirements
+
+When analyzing functional management, education information systems, business processes or administrative work: use the public-source-backed [domain architecture](docs/DOMAIN-OPERATIONS-CAPABILITY-ENGINE.md). Distinguish authoritative source, hypothetical diagnosis, and current local configuration. No fabricated Osiris/Studielink field names, direct production API calls, student-level data or unauthorized mutations. Validate with domain/process facts and independent human or deterministic checks, not code tests alone.
