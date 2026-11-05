@@ -1,0 +1,10 @@
+# EXAMPLE ONLY. Not installed, not activated automatically.
+# Copy this hook definition to a trusted project's .vibe/hooks.toml
+# after reviewing code and confirming python is in PATH.
+[[hooks]]
+name = "vibe-optimizer-checkpoint"
+type = "post_tool"
+command = "python ./examples/checkpoint-watchdog/vibe_post_tool_hook.py"
+timeout = 10.0
+strict = false
+description = "Reorientation reminder after 20 minutes, 25 tool calls or repeated failures"
