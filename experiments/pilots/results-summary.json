@@ -1,0 +1,57 @@
+{
+  "experiment_date": "2026-11-05",
+  "classification": "infrastructure proxy tests, NOT LLM or Vibe evaluation",
+  "python": "3.13.5",
+  "pydantic": "2.13.5",
+  "benchmarks": {
+    "workbench": {
+      "catalog_tools": 24,
+      "tasks_total": 28,
+      "tasks_single": 15,
+      "tasks_multi": 9,
+      "tasks_no_tool": 4,
+      "top_k": 3,
+      "usable_selections": {
+        "static": 3,
+        "bm25": 18,
+        "filtered": 25,
+        "plan": 26
+      },
+      "bad_tool_selections": {
+        "static": 0,
+        "bm25": 10,
+        "filtered": 0,
+        "plan": 0
+      },
+      "top_k_5_usable": {
+        "static": 3,
+        "bm25": 14,
+        "filtered": 26,
+        "plan": 27
+      }
+    },
+    "pydantic_contracts": {
+      "operations": 7,
+      "target_v1_compat": {
+        "legacy_recipe_pass": 7,
+        "modern_recipe_pass": 0
+      },
+      "target_v2": {
+        "legacy_recipe_pass": 7,
+        "legacy_deprecation_warnings": 7,
+        "modern_recipe_pass": 7,
+        "modern_deprecation_warnings": 0
+      }
+    }
+  },
+  "tests": {
+    "unit_tests_local": 4,
+    "passed": 4
+  },
+  "limitations": [
+    "handwritten prompts and gold labels",
+    "no model execution",
+    "Pydantic v1 is compatibility namespace within v2",
+    "results are non-generalizable"
+  ]
+}
