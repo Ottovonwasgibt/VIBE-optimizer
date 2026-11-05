@@ -106,3 +106,17 @@ The calculations are **toy models, not observed Vibe performance**.
 | AGENT-TTC-2026 | https://arxiv.org/abs/2604.16529 | How agent rollout representation and reuse affect test-time scaling |
 
 **Validation gate:** read the full primary methods, inspect available code/artifacts and licensing, and pin source versions before converting reported effect sizes into hypotheses with predicted magnitudes.
+
+## Verified runtime interface sources — 2026-11-05
+
+| Interface | Official primary source | Exact finding | Verification status |
+| --- | --- | --- | --- |
+| MCP Python SDK v2 | https://py.sdk.modelcontextprotocol.io/ | Stable v2 uses `from mcp.server import MCPServer`, decorators and the MCP Client; Python >=3.11 | Checked against docs and real in-memory SDK protocol smoke |
+| MCP SDK migration | https://py.sdk.modelcontextprotocol.io/whats-new/ | Old v1 `mcp.server.fastmcp.FastMCP` import removed; use `MCPServer` | Verified docs, adapter is v2-only |
+| SDK in-memory tests | https://py.sdk.modelcontextprotocol.io/get-started/testing/ | `Client(mcp_server, raise_exceptions=True)` invokes tools without host | CI exercised 3 read-only public tools |
+| SDK stdio host | https://py.sdk.modelcontextprotocol.io/get-started/real-host/ | `mcp.run()` serves over stdio; stdout must not contain unrelated logging | Opt-in launcher implemented, no actual Vibe host proof |
+| Vibe MCP | https://docs.mistral.ai/vibe/code/cli/mcp-servers | `vibe mcp add`, `[[mcp_servers]]`, per-tool permissions; admin can disable MCP | Official docs checked |
+| Vibe plugins | https://docs.mistral.ai/vibe/code/cli/plugins | Agent Plugins 1.0, project trust, `/reload-plugins`, experimental format | Official docs checked, no MCP autoactivation |
+| Vibe skills | https://docs.mistral.ai/vibe/code/cli/skills | Skill `allowed-tools` does NOT enforce host permissions | Official docs checked |
+
+**Evidence boundary:** SDK-level in-memory MCP and stdlib tests have executable proof; actual Vibe model tool discovery and improvement remain untested. `mcp>=2,<3` is an optional research dependency constraint, not a production version lock. Pin the model, SDK and host when testing the installed Vibe client.
