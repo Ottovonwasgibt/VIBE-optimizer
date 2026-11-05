@@ -5,9 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "vibe-optimizer"
 version = "0.1.0"
-description = "Experimental external cognitive augmentation for Mistral Vibe Code"
+description = "Research-stage capability maximization for one task-solving agent"
 requires-python = ">=3.11"
 dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp>=2,<3"]
 
 [project.scripts]
 vibe-brain = "vibe_optimizer.cli:main"
