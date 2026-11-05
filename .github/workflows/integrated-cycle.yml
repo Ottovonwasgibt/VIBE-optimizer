@@ -1,0 +1,27 @@
+name: Integrated capability cycle smoke
+on:
+  push:
+    paths:
+      - 'src/vibe_optimizer/**'
+      - 'examples/capability-workbench/**'
+      - 'examples/script-workshop/**'
+      - 'experiments/integration/**'
+      - 'experiments/live_agent/**'
+      - '.github/workflows/integrated-cycle.yml'
+  workflow_dispatch:
+jobs:
+  synthetic-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synthetic knowledge-to-capability-to-verification smoke
+        run: python experiments/integration/smoke.py
+      - name: Strict paired benchmark parser on synthetic task results
+        run: python experiments/live_agent/paired_eval.py experiments/live_agent/synthetic_results.json
+      - name: Pure recipe and capability loop regression tests
+        run: python -m unittest discover -s tests -p 'test_*capability*.py' -v
+      - name: Pure recipe compiler regression tests
+        run: python -m unittest discover -s tests -p test_recipe_compiler.py -v
