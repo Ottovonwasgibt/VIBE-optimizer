@@ -1,0 +1,30 @@
+name: Research pilot reproducibility
+on:
+  push:
+    paths:
+      - 'experiments/pilots/**'
+      - '.github/workflows/research-pilots.yml'
+  pull_request:
+    paths:
+      - 'experiments/pilots/**'
+      - '.github/workflows/research-pilots.yml'
+  workflow_dispatch:
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pinned API fixture dependency
+        run: python -m pip install pydantic==2.13.5
+      - name: Run tests
+        working-directory: experiments/pilots
+        run: python -m unittest -v test_pilots
+      - name: Generate detailed tool-selection results
+        working-directory: experiments/pilots
+        run: python workbench_pilot.py
+      - name: Generate API compatibility results
+        working-directory: experiments/pilots
+        run: python pydantic_packs_pilot.py
