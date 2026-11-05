@@ -2,6 +2,10 @@
 
 **Status:** research-operating protocol and technical concept; no external model connections are installed or configured in this repository. Version: 2026-11-05.
 
+## Scope correction: optional research instrument
+
+The **primary mission is single-agent capability maximization**, defined in [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md). This laboratory describes an *optional research protocol* for obtaining independent critiques, literature coverage or hypotheses. It is **not** a required multi-agent product architecture, and a single well-augmented Vibe instance is the default experimental system. Compare any additional model/subagent against equal-budget single-model scaling before concluding it helps.
+
 ## Mission
 
 Use Mistral Vibe and one or more independent frontier models as **research instruments** to:
