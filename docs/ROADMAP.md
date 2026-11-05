@@ -100,3 +100,15 @@ The older implementation phases below remain **candidate engineering work**, not
 ## Mission correction: capability maximization first
 
 The main goal is the [Capability Maximization Programme](CAPABILITY-MAXIMIZATION.md): unlock the maximum verified coding/problem-solving ability from **one** fixed model using external knowledge, procedures, tools, verified experience, adaptive context and deliberate inference. Extra agents/models are not a milestone. Evaluate them only when a specific gap warrants the comparison. Use this as the priority order for future work; older roadmap entries are subordinate.
+
+## Cross-domain operational test track
+
+- [x] Create a public-source-backed research design for Osiris/Studielink/DUO functional management.
+- [x] Prepare eight privacy-safe **synthetic** incident/process cases (not production event logs).
+- [ ] Independently review scenarios with an authorized domain expert.
+- [ ] Define blinded answer criteria and an evidence-focused evaluation rubric.
+- [ ] Compare fixed-model baseline, raw public docs, structured process pack and read-only diagnostic tooling.
+- [ ] Only in an explicitly authorized private tenant: consider data-specific integration and narrow read-only checks, with privacy/security review.
+- [ ] Measure wrong diagnosis, unsafe intervention recommendations, missing-evidence handling, operator-time benefit and task completion—not code generation alone.
+
+Core architecture should remain **domain-agnostic**; higher education is a proving ground, not a special-case fork.
