@@ -171,3 +171,52 @@ https://research.google/pubs/cost-effective-agent-test-time-scaling/
 ## Falsification and scientific discipline
 
 Record failed and negative results, tasks solved without tools, false-positive tool creation, unsafe upgrade requests and degradation from extra context. Experimental thresholds and protocols must be chosen *before* seeing results. Use task-distribution stratification and blind grading. This document offers quantitative reasoning and experimental design, **not** evidence that VIBE-optimizer currently raises performance.
+
+
+## Model G — Bayesian tool adequacy as active information gathering
+
+The agent should not treat the first tool choice as a permanent commitment. A read-only probe can update a belief about whether a tool is suitable **before** risking an expensive action.
+
+Let \`F\` mean the tool really fits the task; \`+\` is a positive compatibility probe.
+- Prior: \`P(F)=0.4\`;
+- Sensitivity: \`P(+|F)=0.9\`;
+- Specificity: \`P(-|not F)=0.8\`, hence \`P(+|not F)=0.2\`.
+
+Bayes' rule, assuming these synthetic rates are calibrated:
+
+    P(F|+) = (0.9×0.4)/(0.9×0.4 + 0.2×0.6)
+           = 0.36/0.48 = 0.75
+
+    P(F|-) = (0.1×0.4)/(0.1×0.4 + 0.8×0.6)
+           = 0.04/0.52 ≈ 0.0769
+
+Suppose invoking the tool provides +8 utility when fitting and -8 when unsuitable. Before probing:
+
+    EV(call) = 0.4×8 - 0.6×8 = -1.6
+
+So the best action is to abstain (utility 0). After a positive probe, the expected utility of calling is:
+
+    EV(call | +) = 0.75×8 - 0.25×8 = +4.
+
+The probability of a positive result is \`P(+)=0.48\`. After a negative probe, the best action remains abstention. Thus the probe's **gross expected value of sample information** is:
+
+    EVSI = 0.48×4 + 0.52×0 - 0 = 1.92 utility
+
+At a probe cost of 1 utility unit, net value is **+0.92**. This is a more principled version of the heuristic in Model C because the probe changes the next decision.
+
+All numeric inputs are synthetic. Real tool probes can have false positives, selective observation, correlated test failures, side effects and unmeasured execution risk. Measure and recalibrate them on held-out tool-fixture pairs; do not use model-generated confidence scores as calibrated priors.
+
+### A partially observed control-process interpretation
+
+A proposed research abstraction (not a claim Vibe implements a POMDP):
+
+- Hidden state: actual capability gap and tool suitability;
+- Belief: agent's current uncertainty based on observable evidence;
+- Observation actions: inspect docs, query tool catalog, run contract probe, execute safe test;
+- Task actions: use, compose, adapt or propose a new tool;
+- Feedback: verified outcome, tool failure, cost and risk;
+- Control: choose next action maximizing validated outcome under constraints.
+
+The important research shift is from **tool selection as one-shot classification** to **tool selection as sequential experimentation**. This lens should be compared with simpler heuristics, not assumed superior.
+
+Potential experiment: tool descriptions deliberately ambiguous but cheap probes are informative; measure whether optional probing beats choosing by name or always probing, under equal execution budget.
