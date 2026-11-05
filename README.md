@@ -70,3 +70,6 @@ The priority is now **frontier concept development and theory building**—not i
 - [Research orchestrator technical blueprint](docs/TECHNICAL-DESIGNS/03-research-orchestrator.md) — project-owned data contracts, model adapters, prompts and evaluator boundaries.
 
 Treat proposed novelty as **unverified** until a primary-literature search and independent experiment establish what is actually new. Do not equate multiple-model agreement with scientific validation.
+
+- [Research council runbook](research/RESEARCH-COUNCIL-RUNBOOK.md) — ready-to-use prompts and read-only Vibe agent example.
+- [Deficit-aware router and evidence compiler](docs/TECHNICAL-DESIGNS/04-deficit-router-evidence-compiler.md) — detailed candidate mechanism, contracts and falsifiers.
