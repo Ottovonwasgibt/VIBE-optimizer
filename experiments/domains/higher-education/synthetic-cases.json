@@ -1,0 +1,114 @@
+{
+  "warning": "ALL CASES AND STATES ARE INVENTED for research; NOT real Osiris/Studielink protocol messages, fields, decisions, logs or student records.",
+  "status": "draft task prompts for independent human/domain-expert review; no ground truth keys included",
+  "evaluation": "Model responses must be independently assessed against a private rubric; this public manifest contains no student data or hidden answers.",
+  "cases": [
+    {
+      "case_id": "HO-SYN-001",
+      "category": "enrollment-reconciliation",
+      "scenario": "An authorized operator observes an incoming request in the SIS and asks why the final institutional registration is not complete.",
+      "facts": [
+        "At T0 a synthetic portal request was recorded.",
+        "At T1 outbound exchange recorded correlation SYN-001.",
+        "At T2 SIS acknowledged receipt.",
+        "At T3 manual assessment started; no completion event is present."
+      ],
+      "missing": [
+        "Current local status mapping and approval status."
+      ],
+      "requested_output": "Evidence-based likely explanation, safe next checks, no registration change."
+    },
+    {
+      "case_id": "HO-SYN-002",
+      "category": "integration-failure",
+      "scenario": "A synthetic integration event appears sent, but the receiving test system has not displayed the update.",
+      "facts": [
+        "At T0 source emitted event SYN-002.",
+        "At T1 transport accepted the payload.",
+        "Receiver business validation status is unknown."
+      ],
+      "missing": [
+        "Receiver validation result and publication delay."
+      ],
+      "requested_output": "Distinguish transport from business validation; suggest read-only trace checks."
+    },
+    {
+      "case_id": "HO-SYN-003",
+      "category": "report-discrepancy",
+      "scenario": "A study enrollment report shows fewer rows than an on-screen filtered view.",
+      "facts": [
+        "Report was generated at 08:00.",
+        "Screen was refreshed at 12:00.",
+        "One view includes pending requests; other definition is not supplied."
+      ],
+      "missing": [
+        "Report inclusion rules, refresh cadence, data lineage."
+      ],
+      "requested_output": "Identify competing explanations and list evidence needed without inventing SQL schema."
+    },
+    {
+      "case_id": "HO-SYN-004",
+      "category": "authorization",
+      "scenario": "A staff member signs in successfully but cannot open a specific management function.",
+      "facts": [
+        "Authentication completed.",
+        "The user says expected role was assigned.",
+        "No current authorized role mapping or session timestamp supplied."
+      ],
+      "missing": [
+        "Group-to-role mapping, change propagation, profile membership."
+      ],
+      "requested_output": "Separate identity and authorization; no privilege mutation."
+    },
+    {
+      "case_id": "HO-SYN-005",
+      "category": "financial-process",
+      "scenario": "An enrollment-related tuition amount differs from a quoted amount.",
+      "facts": [
+        "The quote uses a previous study year.",
+        "Institutional category and current policy are not known."
+      ],
+      "missing": [
+        "Applicable study year, authoritative decision and current category."
+      ],
+      "requested_output": "Avoid deciding entitlement; identify sources and escalation."
+    },
+    {
+      "case_id": "HO-SYN-006",
+      "category": "duplicate-identification",
+      "scenario": "An imported synthetic applicant record appears to match an existing record.",
+      "facts": [
+        "Names look similar.",
+        "Distinct test identifiers are present.",
+        "No authoritative identity check result supplied."
+      ],
+      "missing": [
+        "Identity reconciliation and duplicate review outcome."
+      ],
+      "requested_output": "Avoid automatic merge; propose authorized identity verification."
+    },
+    {
+      "case_id": "HO-SYN-007",
+      "category": "change-management",
+      "scenario": "An office asks to modify a registration flow before the next study year.",
+      "facts": [
+        "Request names a new deadline.",
+        "Unclear which interface and admissions route apply."
+      ],
+      "missing": [
+        "Change owners, regulatory version, sandbox acceptance tests."
+      ],
+      "requested_output": "Produce impact assessment, test/rollback and approvals; no production modification."
+    },
+    {
+      "case_id": "HO-SYN-008",
+      "category": "no-tool-required",
+      "scenario": "A user asks for a short neutral definition of the distinction between authentication and authorization.",
+      "facts": [
+        "No institution-specific action or student record needed."
+      ],
+      "missing": [],
+      "requested_output": "Give conceptual answer without unnecessary data access or tools."
+    }
+  ]
+}
