@@ -7,6 +7,7 @@ on:
       - 'src/vibe_optimizer/watchdog_gate.py'
       - 'tests/test_watchdog_replay.py'
       - 'tests/test_watchdog_sensitivity.py'
+      - 'tests/test_watchdog_observatory.py'
       - '.github/workflows/watchdog-replay.yml'
   workflow_dispatch:
 jobs:
@@ -21,6 +22,8 @@ jobs:
         run: python experiments/watchdog/replay.py --output experiments/watchdog/replay-results.json
       - name: Replay seeded threshold sensitivity
         run: python experiments/watchdog/sensitivity.py --repeats 20 --output experiments/watchdog/sensitivity-results.json
+      - name: Audit strict synthetic host-event trace
+        run: python experiments/watchdog/observatory.py experiments/watchdog/synthetic_trace.json
       - name: Test the replay harness
         run: python -m unittest discover -s tests -p 'test_watchdog_*.py' -v
       - uses: actions/upload-artifact@v4
