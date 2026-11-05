@@ -128,3 +128,14 @@ The example hook is **NOT active automatically**. The project owner can inspect 
 - Invocations may overlap; SQLite transactions protect counter updates, but host-specific installation and concurrent tool ordering require further testing.
 
 **Research status:** we can now test whether the prompt is really delivered to a compatible Vibe version. We still cannot claim that actual long-horizon task completion improves until a controlled Vibe A/B experiment measures it.
+
+
+## Executed sensitivity study and observational instrumentation
+
+See [Checkpoint Watchdog Sensitivity — 2026-11-05](../../research/CHECKPOINT-WATCHDOG-SENSITIVITY-2026-11-05.md). It replays ten synthetic session families with twenty seeded perturbations per family in two splits. Event-driven policies produced fewer notifications on healthy traces; shorter interval policies produced more broad warnings. These are **policy outputs**, not demonstrated agent-task improvement.
+
+A new [strict sanitized observatory](../../experiments/watchdog/observatory.py) rejects prompt/tool-output/path fields and is intended to receive independently observed host telemetry in a later actual Vibe evaluation. Unknown progress or tool-fit information must remain unknown, not model-hallucinated.
+
+The [external reminder gate](../../src/vibe_optimizer/watchdog_gate.py) also retains a \`safety_hold\` after a trusted unsafe signal; only a host-authenticated clearance may release it. The library alone does **not** interrupt Vibe or enforce that hold.
+
+Do not optimize the 20-minute/25-call thresholds based on synthetic alerts alone: controlled fixed-model task evaluations and false-interruption costs remain necessary.
