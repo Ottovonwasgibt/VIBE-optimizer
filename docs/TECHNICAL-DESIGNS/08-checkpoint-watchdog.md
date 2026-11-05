@@ -62,9 +62,9 @@ The watchdog **must not interrupt an in-flight write, production transaction, mi
 
 ## Concrete implementation
 
-- [Policy module](../src/vibe_optimizer/checkpoint_watchdog.py): pure deterministic policy with typed counters, reason codes, and restart packet helper.
-- [Unit tests](../tests/test_checkpoint_watchdog.py): intervals, stalls, observed tool drift, context pressure, safe-boundary deferral, priority, invalid configuration and packet shape.
-- [Host-agnostic example script](../examples/checkpoint-watchdog/check.py): consumes JSON event input, prints JSON outcome; **not** an installed Vibe hook.
+- [Policy module](../../src/vibe_optimizer/checkpoint_watchdog.py): pure deterministic policy with typed counters, reason codes, and restart packet helper.
+- [Unit tests](../../tests/test_checkpoint_watchdog.py): intervals, stalls, observed tool drift, context pressure, safe-boundary deferral, priority, invalid configuration and packet shape.
+- [Host-agnostic example script](../../examples/checkpoint-watchdog/check.py): consumes JSON event input, prints JSON outcome; **not** an installed Vibe hook.
 
 **Integration still required:** Mistral Vibe must expose or permit a reliable tool-completion/session event source or a controlling external harness. The actual event and plug-in APIs need to be verified against the installed Vibe version. We cannot assume every agent host supports arbitrary periodic hook injection. A supervisor process can evaluate a policy, but only a cooperating host can display or act on the result.
 
@@ -105,3 +105,26 @@ Keep the nudge **brief** (a few hundred tokens). Ask for observable state, not h
 5. Build a small indexed evidence ledger to avoid unbounded progress.txt loading.
 6. Add human-requested break/resume interfaces without pretending the machine needs rest.
 7. Track "checkpoint effectiveness" separately: prevented error, time cost and false alarms.
+
+
+## Concrete opt-in Vibe integration confirmed in official documentation
+
+Mistral Vibe Code now documents native lifecycle hooks, including post-tool hooks and a JSON \`hook_specific_output.additional_context\` field that is appended to the tool result the agent receives. This makes **actual reorientation nudges possible**, without inventing a proprietary API.
+
+- Specification: https://docs.mistral.ai/vibe/code/cli/hooks
+- [Opt-in hook script](../../examples/checkpoint-watchdog/vibe_post_tool_hook.py)
+- [Example hooks.toml](../../examples/checkpoint-watchdog/hooks.toml.example)
+- [Hook tests](../../tests/test_vibe_post_tool_hook.py)
+
+The example hook is **NOT active automatically**. The project owner can inspect the script and copy the hook definition into a trusted working directory's \`.vibe/hooks.toml\`, then ensure the command points to the script. Running a hook may require Vibe to restart or create a new session to pick up configuration. Verify behavior with installed \`vibe --version\`.
+
+### Implementation boundaries
+
+- Hook reads only event/session identifier, tool outcome and time. It **never stores prompts, student data, tool arguments or tool output**; an SQLite file under ignored \`.vibe/data/\` stores a hashed session ID and counters.
+- The hook offers a short reminder **after** the 25th completed tool call, after ~20 minutes elapsed **as observed at the next tool event**, or after three observed tool failures. A process returning nonzero may still be reported as tool success by Vibe, so the sample checks \`returncode\` where available.
+- It does **not** run a timer in a currently idle model session. It has no access to independent context-utilization signals, structured verified-progress certificates, or a strong tool-suitability oracle.
+- It does not assert that the model acknowledged the checkpoint. Counter resets are *reminder-rate-limiting*, not proof of a review. A trusted host must later record completed reviews and source-backed handoffs.
+- The example deliberately does not inject a context reset or force another model turn, does not bypass permissions and does not deny ordinary tool calls.
+- Invocations may overlap; SQLite transactions protect counter updates, but host-specific installation and concurrent tool ordering require further testing.
+
+**Research status:** we can now test whether the prompt is really delivered to a compatible Vibe version. We still cannot claim that actual long-horizon task completion improves until a controlled Vibe A/B experiment measures it.
