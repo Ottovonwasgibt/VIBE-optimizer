@@ -148,3 +148,15 @@ Run \`python examples/private-knowledge/demo.py\` and \`python -m unittest disco
 ## Community practice and frontier-forum evidence (2026-11-05)
 
 [Community Field Scan](research/COMMUNITY-FIELD-SCAN-2026-11-05.md) examines twelve practice patterns and counterexamples from Reddit, Hacker News, GitHub projects and issue trackers: Superpowers, gstack browser scriptification, Ralph, Beads, claude-mem, Serena, Context7, hooks, silent skill activation, underused LSP tools and skill supply-chain findings. It separates inspectable implementations, author evaluations, user anecdotes and observational research; **no community code was automatically installed**.
+
+
+## Agent drift, periodic checkpoints and fresh-context recovery
+
+[Checkpoint Watchdog design and research](docs/TECHNICAL-DESIGNS/08-checkpoint-watchdog.md): a single agent should periodically **reorient**, verify observable progress, reconsider available tools and, when justified, resume with an evidence-linked fresh-context handoff.
+
+- [Deterministic checkpoint policy](src/vibe_optimizer/checkpoint_watchdog.py): time/tool-call, repeated failures, stalled progress, observed underuse of suitable tools and context-pressure gates.
+- [Opt-in native Vibe post-tool hook](examples/checkpoint-watchdog/vibe_post_tool_hook.py): an actual Mistral Vibe hooks-compatible example that adds a short reminder after 20 minutes, 25 tool calls or repeated tool errors; no conversation or tool contents are stored.
+- [Example hooks.toml](examples/checkpoint-watchdog/hooks.toml.example): **not automatically installed**.
+- [One-shot policy demo](examples/checkpoint-watchdog/check.py) and [tests](tests/test_checkpoint_watchdog.py).
+
+The Vibe hook can only nudge the agent at **the next tool event**, not while the model is idle; it cannot independently verify that the agent followed the reminder or forcibly create a fresh session. It must be evaluated against a Vibe task-success baseline before declaring a benefit. Current thresholds are research defaults, **not scientifically optimized**. Relevant public Vibe hook contract: https://docs.mistral.ai/vibe/code/cli/hooks
